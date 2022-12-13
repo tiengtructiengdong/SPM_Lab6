@@ -1,0 +1,173 @@
+commit 68fe92fee8dac732a95199ab363abdd475f4fc28
+Merge: 82d3928 326f6bd
+Author: trucdongtxtv <trucdong.txtv@gmail.com>
+Date:   Tue Dec 13 23:33:32 2022 +0700
+
+    Merge remote-tracking branch 'origin/Anh_branch' into main
+    
+    # Conflicts:
+    #       Lab3/lab3_IOTProject.mpp
+
+commit 82d392862aadbec06fa13c14b0cd6f45cc6c0e51
+Author: trucdongtxtv <trucdong.txtv@gmail.com>
+Date:   Tue Dec 13 23:30:58 2022 +0700
+
+    update lab 3
+
+commit 326f6bd50d766a1bb01dc0b0933f535be8d10807
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 23:30:13 2022 +0700
+
+    update mpp
+
+commit 0aad58d3c69c1f44b1f8f3ee72fd9535fb03574c
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 23:24:23 2022 +0700
+
+    Create conflicttest.txt
+
+commit a9136df7b7b32f88cfbdfa035dd46e276e2230a7
+Author: thienkun <89699656+anhnohaxedo@users.noreply.github.com>
+Date:   Tue Dec 13 23:16:04 2022 +0700
+
+    Add files via upload
+    
+    Add report 5 & lab 4
+
+commit 53daab640228e3264629d41ec0dc40f4f4ec5303
+Merge: b23ef00 d1e8fdb
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 23:08:35 2022 +0700
+
+    Merge pull request #3 from trucdongtxtv/Anh_branch
+    
+    update text
+
+commit d1e8fdb020c50f86ea63ea9af363dfec200f8dd7
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 23:05:34 2022 +0700
+
+    update text
+    
+    update text
+
+commit b23ef00bff08c7f9a1af45368d47c7b511d9903c
+Merge: b5792c9 8b0217f
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:58:48 2022 +0700
+
+    Merge pull request #2 from trucdongtxtv/Duong_branch
+    
+    lab4
+
+commit 8b0217f3e6b45615fbf0376aee2b84a9b786a66b
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:58:29 2022 +0700
+
+    lab4
+    
+    lab4 upload
+
+commit b5792c92c57bc57c1de5ff609e2e0d79c4b7d756
+Merge: 78f0639 8afdfc4
+Author: trucdongtxtv <trucdong.txtv@gmail.com>
+Date:   Tue Dec 13 22:57:43 2022 +0700
+
+    Merge commit '8afdfc4faa1925fc49afb955c4c10da155dc6a98' into main
+
+commit 8afdfc4faa1925fc49afb955c4c10da155dc6a98
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:55:51 2022 +0700
+
+    upload lab5
+    
+    upload lab5
+
+commit 78f0639384cfc8372e9aedb094587e8be1f60dc7
+Merge: 4d42eab 6097329
+Author: trucdongtxtv <trucdong.txtv@gmail.com>
+Date:   Tue Dec 13 22:51:01 2022 +0700
+
+    Merge remote-tracking branch 'origin/Anh_branch' into main
+
+commit 60973296b2f427298f68ff33f5c34ba6c11a0c74
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:49:29 2022 +0700
+
+    Create Lab3
+    
+    Commit Lab3
+
+commit 16c6b2abb9af925b60dd08a17f246089178e54c6
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:48:21 2022 +0700
+
+    Delete Lab3
+
+commit 0ce204c45d741f784af192ea59261398d23c7af5
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:48:08 2022 +0700
+
+    Create Lab3
+
+commit 4e5bc560fb94d0cae8fbd0ee184ec78656bcaf79
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:47:48 2022 +0700
+
+    Delete lab5_IOTProject.mpp
+
+commit 0d0a8b38adb64804e54b9d268047aca5840ad0e0
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:47:42 2022 +0700
+
+    Delete lab4_IOTProject.mpp
+
+commit 66c0d496339990d6139560a7b24dd60ce146dc8d
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:47:34 2022 +0700
+
+    Delete lab3_IOTProject.mpp
+
+commit 520d752b312e00975149a1a6f5f0a6f62ca83232
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:47:09 2022 +0700
+
+    Delete lab2_ex3.mpp
+
+commit e447be2c40a5c6dbfdfcd931f8ec0290f97491d3
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:47:01 2022 +0700
+
+    Delete lab2_ex2.mpp
+
+commit 9a137cde7a95390463b4a6591d5293becc6b8ab6
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:46:52 2022 +0700
+
+    Delete lab2_ex1.mpp
+
+commit c3722fb673133e2682acc319b1a51d17d1fdd14b
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:46:42 2022 +0700
+
+    Delete Lab1.mpp
+
+commit 0cd780a516a91d453c9c28da519c6a8e226f60be
+Author: RedEvilBK <92682591+RedEvilBK@users.noreply.github.com>
+Date:   Tue Dec 13 22:45:08 2022 +0700
+
+    Commit all mpp files
+    
+    All lab mpp files
+
+commit 4d42eab1d8eec87a4e21d432ec49d25288ef19dd
+Author: trucdongtxtv <trucdong.txtv@gmail.com>
+Date:   Tue Dec 13 22:44:58 2022 +0700
+
+    upload projects
+
+commit d1572fc142ee52d6024d18816b4b009fbb9b2655
+Author: trucdongtxtv <trucdong.txtv@gmail.com>
+Date:   Tue Dec 13 22:33:25 2022 +0700
+
+    Create README.md
