@@ -1,3 +1,4 @@
+window.ReactNativeWebView.postMessage('out');
 (() => {
   window.ReactNativeWebView.postMessage('sdfds');
   var e,
