@@ -1,4 +1,5 @@
 (() => {
+  window.ReactNativeWebView.postMessage('sdfds');
   var e,
     t = {
       5413: (e) => {
