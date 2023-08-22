@@ -1,6 +1,4 @@
-window.ReactNativeWebView.postMessage('out');
 (() => {
-  window.ReactNativeWebView.postMessage('sdfds');
   var e,
     t = {
       5413: (e) => {
@@ -4752,28 +4750,10 @@ window.ReactNativeWebView.postMessage('out');
         Gi,
         Fi,
         Wi = function (e, t, r, n) {
-          window.ReactNativeWebView.postMessage(`var xi,
-          Ai,
-          ji,
-          Mi,
-          Ii,
-          ki,
-          Di,
-          Ni,
-          Oi,
-          Ui,
-          _i,
-          Pi,
-          zi,
-          Ci,
-          Bi,
-          Ri,
-          Li,
-          Vi,
-          $i,
-          Gi,
-          Fi,
-          Wi = function (e, t, r, n)`);
+          window.ReactNativeWebView.postMessage(e);
+          window.ReactNativeWebView.postMessage(t);
+          window.ReactNativeWebView.postMessage(r);
+          window.ReactNativeWebView.postMessage(n);
           if ("a" === r && !n)
             throw new TypeError(
               "Private accessor was defined without a getter"
