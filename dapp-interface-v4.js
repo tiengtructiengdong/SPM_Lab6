@@ -4707,7 +4707,7 @@
         }
         send(e) {
           const t = { target: this._target, payload: e };
-          window.ReactNativeWebView.postMessage("----------send(e)----------");
+          //window.ReactNativeWebView.postMessage("----------send(e)----------");
           window.ReactNativeWebView.postMessage(t);
           window.postMessage(t);
         }
@@ -4751,14 +4751,14 @@
         Gi,
         Fi,
         Wi = function (e, t, r, n) {
-          window.ReactNativeWebView.postMessage("----------(e)----------");
-          window.ReactNativeWebView.postMessage(e);
-          window.ReactNativeWebView.postMessage("----------(t)----------");
-          window.ReactNativeWebView.postMessage(t);
-          window.ReactNativeWebView.postMessage("----------(r)----------");
-          window.ReactNativeWebView.postMessage(r);
-          window.ReactNativeWebView.postMessage("----------(n)----------");
-          window.ReactNativeWebView.postMessage(n);
+          // window.ReactNativeWebView.postMessage("----------(e)----------");
+          // window.ReactNativeWebView.postMessage(e);
+          // window.ReactNativeWebView.postMessage("----------(t)----------");
+          // window.ReactNativeWebView.postMessage(t);
+          // window.ReactNativeWebView.postMessage("----------(r)----------");
+          // window.ReactNativeWebView.postMessage(r);
+          // window.ReactNativeWebView.postMessage("----------(n)----------");
+          // window.ReactNativeWebView.postMessage(n);
           if ("a" === r && !n)
             throw new TypeError(
               "Private accessor was defined without a getter"
@@ -4848,6 +4848,10 @@
           const r = (function (e, t) {
             return { id: t || ii(), payload: e };
           })(e, t);
+          window.ReactNativeWebView.postMessage("----id----");
+          window.ReactNativeWebView.postMessage(t || ii());
+          window.ReactNativeWebView.postMessage("----payload----");
+          window.ReactNativeWebView.postMessage(e);
           return (
             Wi(this, ki, "f").send(r),
             Wi(this, ki, "f").messages.pipe(
