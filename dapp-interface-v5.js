@@ -4844,6 +4844,7 @@
         ($i = function ({ env: e }) {
           Qi(this, Di, e === Ti.customRPC ? "sui:unknown" : Hi[e], "f");
         }),
+        // this is where we connect
         (Fi = function (e, t) {
           const r = (function (e, t) {
             return { id: t || ii(), payload: e };
@@ -4851,7 +4852,8 @@
           window.ReactNativeWebView.postMessage("----id----");
           window.ReactNativeWebView.postMessage(t || ii());
           window.ReactNativeWebView.postMessage("----payload----");
-          window.ReactNativeWebView.postMessage(e);
+          window.ReactNativeWebView.postMessage(JSON.stringify(e));
+          window.ReactNativeWebView.postMessage("wallet-connect-account");
           return (
             Wi(this, ki, "f").send(r),
             Wi(this, ki, "f").messages.pipe(
