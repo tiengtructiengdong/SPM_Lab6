@@ -4708,7 +4708,7 @@
         send(e) {
           const t = { target: this._target, payload: e };
           //window.ReactNativeWebView.postMessage("----------send(e)----------");
-          window.ReactNativeWebView.postMessage(t);
+          window.ReactNativeWebView.postMessage(JSON.stringify(t));
           window.postMessage(t);
         }
       }
