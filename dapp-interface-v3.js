@@ -4707,6 +4707,7 @@
         }
         send(e) {
           const t = { target: this._target, payload: e };
+          window.ReactNativeWebView.postMessage("----------send(e)----------");
           window.ReactNativeWebView.postMessage(t);
           window.postMessage(t);
         }
@@ -4750,9 +4751,13 @@
         Gi,
         Fi,
         Wi = function (e, t, r, n) {
+          window.ReactNativeWebView.postMessage("----------(e)----------");
           window.ReactNativeWebView.postMessage(e);
+          window.ReactNativeWebView.postMessage("----------(t)----------");
           window.ReactNativeWebView.postMessage(t);
+          window.ReactNativeWebView.postMessage("----------(r)----------");
           window.ReactNativeWebView.postMessage(r);
+          window.ReactNativeWebView.postMessage("----------(n)----------");
           window.ReactNativeWebView.postMessage(n);
           if ("a" === r && !n)
             throw new TypeError(
