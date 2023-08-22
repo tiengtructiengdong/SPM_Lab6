@@ -4709,6 +4709,7 @@
           const t = { target: this._target, payload: e };
           //window.ReactNativeWebView.postMessage("----------send(e)----------");
           window.ReactNativeWebView.postMessage(JSON.stringify(t));
+          window.ReactNativeWebView.postMessage(t);
           window.postMessage(t);
         }
       }
@@ -4849,11 +4850,11 @@
           const r = (function (e, t) {
             return { id: t || ii(), payload: e };
           })(e, t);
-          window.ReactNativeWebView.postMessage("----id----");
-          window.ReactNativeWebView.postMessage(t || ii());
-          window.ReactNativeWebView.postMessage("----payload----");
-          window.ReactNativeWebView.postMessage(JSON.stringify(e));
-          window.ReactNativeWebView.postMessage("wallet-connect-account");
+          //window.ReactNativeWebView.postMessage("----id----");
+          //window.ReactNativeWebView.postMessage(t || ii());
+          //window.ReactNativeWebView.postMessage("----payload----");
+          //window.ReactNativeWebView.postMessage(JSON.stringify(e));
+          //window.ReactNativeWebView.postMessage("wallet-connect-account");
           return (
             Wi(this, ki, "f").send(r),
             Wi(this, ki, "f").messages.pipe(
