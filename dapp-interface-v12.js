@@ -4389,6 +4389,14 @@
         hi = ["on", "off"];
 
       function pi(e, t, r, n) {
+        window.ReactNativeWebView.postMessage(`-----------e------------`);
+        window.ReactNativeWebView.postMessage(e);
+        window.ReactNativeWebView.postMessage(`-----------t------------`);
+        window.ReactNativeWebView.postMessage(t);
+        window.ReactNativeWebView.postMessage(`-----------r------------`);
+        window.ReactNativeWebView.postMessage(r);
+        window.ReactNativeWebView.postMessage(`-----------n------------`);
+        window.ReactNativeWebView.postMessage(n);
         if ((ln(r) && ((n = r), (r = void 0)), n))
           return pi(e, t, r).pipe(
             ((i = n),
@@ -4404,10 +4412,6 @@
               return ln(e.addEventListener) && ln(e.removeEventListener);
             })(e)
               ? fi.map(function (n) {
-                  window.ReactNativeWebView.postMessage(
-                    `var fi = ["addEventListener", "removeEventListener"]`
-                  );
-                  window.ReactNativeWebView.postMessage(n);
                   return function (i) {
                     return e[n](t, i, r);
                   };
@@ -4417,10 +4421,6 @@
                 })(e)
               ? di.map(yi(e, t))
               : (function (e) {
-                  window.ReactNativeWebView.postMessage(
-                    `var di = ["addListener", "removeListener"]`
-                  );
-                  window.ReactNativeWebView.postMessage(e);
                   return ln(e.on) && ln(e.off);
                 })(e)
               ? hi.map(yi(e, t))
