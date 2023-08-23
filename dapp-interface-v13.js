@@ -4389,14 +4389,14 @@
         hi = ["on", "off"];
 
       function pi(e, t, r, n) {
-        window.ReactNativeWebView.postMessage(`-----------e------------`);
-        window.ReactNativeWebView.postMessage(e);
-        window.ReactNativeWebView.postMessage(`-----------t------------`);
-        window.ReactNativeWebView.postMessage(t);
-        window.ReactNativeWebView.postMessage(`-----------r------------`);
-        window.ReactNativeWebView.postMessage(r);
-        window.ReactNativeWebView.postMessage(`-----------n------------`);
-        window.ReactNativeWebView.postMessage(n);
+        // window.ReactNativeWebView.postMessage(`-----------e------------`);
+        // window.ReactNativeWebView.postMessage(e);
+        // window.ReactNativeWebView.postMessage(`-----------t------------`);
+        // window.ReactNativeWebView.postMessage(t);
+        // window.ReactNativeWebView.postMessage(`-----------r------------`);
+        // window.ReactNativeWebView.postMessage(r);
+        // window.ReactNativeWebView.postMessage(`-----------n------------`);
+        // window.ReactNativeWebView.postMessage(n);
         if ((ln(r) && ((n = r), (r = void 0)), n))
           return pi(e, t, r).pipe(
             ((i = n),
@@ -4892,7 +4892,13 @@
           try {
             window.addEventListener(
               "wallet-standard:app-ready",
-              ({ detail: e }) => r(e)
+              ({ detail: e }) => {
+                window.ReactNativeWebView.postMessage(
+                  "wallet-standard:app-ready"
+                );
+                window.ReactNativeWebView.postMessage(e);
+                r(e);
+              }
             );
           } catch (e) {
             window.ReactNativeWebView.postMessage(
