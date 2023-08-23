@@ -226,7 +226,7 @@
         };
       class d {
         constructor(e) {
-          window.ReactNativeWebView.postMessage("class d instance is created");
+          //window.ReactNativeWebView.postMessage("class d instance is created");
           window.ReactNativeWebView.postMessage(e);
           r.set(this, void 0),
             i.set(this, void 0),
@@ -4404,6 +4404,10 @@
               return ln(e.addEventListener) && ln(e.removeEventListener);
             })(e)
               ? fi.map(function (n) {
+                  window.ReactNativeWebView.postMessage(
+                    `var fi = ["addEventListener", "removeEventListener"]`
+                  );
+                  window.ReactNativeWebView.postMessage(n);
                   return function (i) {
                     return e[n](t, i, r);
                   };
@@ -4413,6 +4417,10 @@
                 })(e)
               ? di.map(yi(e, t))
               : (function (e) {
+                  window.ReactNativeWebView.postMessage(
+                    `var di = ["addListener", "removeListener"]`
+                  );
+                  window.ReactNativeWebView.postMessage(e);
                   return ln(e.on) && ln(e.off);
                 })(e)
               ? hi.map(yi(e, t))
