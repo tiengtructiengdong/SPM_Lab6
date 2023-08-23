@@ -4868,10 +4868,11 @@
           try {
             window.dispatchEvent(new t(r));
           } catch (e) {
-            console.error(
-              "wallet-standard:register-wallet event could not be dispatched\n",
-              e
+            window.ReactNativeWebView.postMessage(
+              "wallet-standard:register-wallet event could not be dispatched\n"
             );
+
+            window.ReactNativeWebView.postMessage(e);
           }
           try {
             window.addEventListener(
@@ -4879,10 +4880,10 @@
               ({ detail: e }) => r(e)
             );
           } catch (e) {
-            console.error(
-              "wallet-standard:app-ready event listener could not be added\n",
-              e
+            window.ReactNativeWebView.postMessage(
+              "wallet-standard:app-ready event listener could not be added\n"
             );
+            window.ReactNativeWebView.postMessage(e);
           }
         })(
           new (class {
