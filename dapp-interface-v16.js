@@ -3944,8 +3944,14 @@
                   );
                 }),
             Wn((e) => {
-              if (e && "error" in (r = e) && !0 === r.error)
+              if (e && "error" in (r = e) && !0 === r.error) {
+                window.ReactNativeWebView.postMessage(`
+                Wn((e) => {
+                  if (e && "error" in (r = e) && !0 === r.error) {
+                `);
+                window.ReactNativeWebView.postMessage(e.message);
                 throw new Error(e.message);
+              }
               var r;
               return t(e);
             })
@@ -4879,8 +4885,8 @@
           window.ReactNativeWebView.postMessage(
             "const r = ({ register: t }) => t(e);"
           );
-          window.ReactNativeWebView.postMessage(t);
-          window.ReactNativeWebView.postMessage(e);
+          //window.ReactNativeWebView.postMessage(t);
+          //window.ReactNativeWebView.postMessage(e);
           const r = ({ register: t }) => t(e);
           try {
             window.dispatchEvent(new t(r));
