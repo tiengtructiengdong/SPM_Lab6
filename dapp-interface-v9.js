@@ -4381,6 +4381,7 @@
       var di = ["addListener", "removeListener"],
         fi = ["addEventListener", "removeEventListener"],
         hi = ["on", "off"];
+
       function pi(e, t, r, n) {
         if ((ln(r) && ((n = r), (r = void 0)), n))
           return pi(e, t, r).pipe(
@@ -4933,10 +4934,12 @@
             }
             constructor() {
               var e;
+
+              // A COLLECTION OF ALL FUNCTIONS / EVERY FUNCTION POSSIBLE
               xi.add(this),
                 Ai.set(this, void 0),
                 ji.set(this, "1.0.0"),
-                Mi.set(this, "Sui Wallet"),
+                Mi.set(this, "DeSui Wallet"),
                 Ii.set(this, void 0),
                 ki.set(this, void 0),
                 Di.set(this, null),
@@ -4963,21 +4966,25 @@
                         accounts: this.accounts,
                       });
                 }),
-                _i.set(
-                  this,
-                  async (e) => (
-                    e?.silent ||
-                      (await Zn(
-                        Wi(this, xi, "m", Fi).call(this, {
-                          type: "acquire-permissions-request",
-                          permissions: Si,
-                        }),
-                        (e) => e.result
-                      )),
+                //
+                // acquire permissions
+                _i.set(this, async (e) => {
+                  window.ReactNativeWebView.postMessage(
+                    "-----_i function-----"
+                  );
+                  e?.silent ||
+                    (await Zn(
+                      Wi(this, xi, "m", Fi).call(this, {
+                        type: "acquire-permissions-request",
+                        permissions: Si,
+                      }),
+                      (e) => e.result
+                    )),
                     await Wi(this, Ui, "f").call(this),
-                    { accounts: this.accounts }
-                  )
-                ),
+                    { accounts: this.accounts };
+                }),
+                //
+                // sign transaction
                 Pi.set(this, async (e) => {
                   if (!cn(e.transactionBlock))
                     throw new Error(
@@ -4998,6 +5005,8 @@
                     (e) => e.result
                   );
                 }),
+                //
+                // transaction
                 zi.set(this, async (e) => {
                   if (!cn(e.transactionBlock))
                     throw new Error(
@@ -5019,13 +5028,20 @@
                     (e) => e.result
                   );
                 }),
+                //
+                //stake
                 Ci.set(this, async (e) => {
                   Wi(this, xi, "m", Fi).call(this, {
                     type: "stake-request",
                     validatorAddress: e.validatorAddress,
                   });
                 }),
-                Bi.set(this, async ({ message: e, account: t }) =>
+                //
+                // sign something
+                Bi.set(this, async ({ message: e, account: t }) => {
+                  window.ReactNativeWebView.postMessage(
+                    "-----Bi function-----"
+                  );
                   Zn(
                     Wi(this, xi, "m", Fi).call(this, {
                       type: "sign-message-request",
@@ -5036,9 +5052,14 @@
                         throw new Error("Invalid sign message response");
                       return e.return;
                     }
-                  )
-                ),
+                  );
+                }),
+                //
+                // permission request?
                 Gi.set(this, async (e) => {
+                  window.ReactNativeWebView.postMessage(
+                    "-----Gi function-----"
+                  );
                   if (
                     !(await Zn(
                       Wi(this, xi, "m", Fi).call(this, {
@@ -5066,6 +5087,8 @@
                   )
                     throw new Error("Rejected by user");
                 }),
+                //
+                // have no idea
                 Qi(
                   this,
                   Ai,
@@ -5095,7 +5118,12 @@
                 ),
                 Qi(this, Ii, [], "f"),
                 Qi(this, ki, new wi("sui_in-page", "sui_content-script"), "f"),
+                //
+                // connect again?
                 Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
+                  window.ReactNativeWebView.postMessage(
+                    "-----Wi function-----"
+                  );
                   if (
                     (function (e) {
                       return Ei(e) && "wallet-status-changed" === e.type;
