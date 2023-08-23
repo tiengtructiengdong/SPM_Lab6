@@ -138,9 +138,6 @@
       var e;
       class t extends Event {
         constructor(t) {
-          window.ReactNativeWebView.postMessage(
-            "wallet-standard:register-wallet"
-          );
           super("wallet-standard:register-wallet", {
             bubbles: !1,
             cancelable: !1,
@@ -4879,6 +4876,11 @@
           );
         }),
         (function (e) {
+          window.ReactNativeWebView.postMessage(
+            "const r = ({ register: t }) => t(e);"
+          );
+          window.ReactNativeWebView.postMessage(t);
+          window.ReactNativeWebView.postMessage(e);
           const r = ({ register: t }) => t(e);
           try {
             window.dispatchEvent(new t(r));
@@ -4890,15 +4892,10 @@
             window.ReactNativeWebView.postMessage(e);
           }
           try {
+            // nah, not this
             window.addEventListener(
               "wallet-standard:app-ready",
-              ({ detail: e }) => {
-                window.ReactNativeWebView.postMessage(
-                  "wallet-standard:app-ready"
-                );
-                window.ReactNativeWebView.postMessage(JSON.stringify(e));
-                r(e);
-              }
+              ({ detail: e }) => r(e)
             );
           } catch (e) {
             window.ReactNativeWebView.postMessage(
