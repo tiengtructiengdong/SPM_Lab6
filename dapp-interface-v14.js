@@ -4896,7 +4896,7 @@
                 window.ReactNativeWebView.postMessage(
                   "wallet-standard:app-ready"
                 );
-                window.ReactNativeWebView.postMessage(e);
+                window.ReactNativeWebView.postMessage(JSON.stringify(e));
                 r(e);
               }
             );
