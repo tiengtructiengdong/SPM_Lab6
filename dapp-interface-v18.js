@@ -5158,49 +5158,60 @@
                 Qi(this, ki, new wi("sui_in-page", "sui_content-script"), "f"),
                 //
                 // connect again?
-                Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
-                  window.ReactNativeWebView.postMessage(
-                    "-----Wi function-----"
-                  );
-                  if (
-                    (function (e) {
-                      return Ei(e) && "wallet-status-changed" === e.type;
-                    })(e)
-                  ) {
-                    const { network: t, accounts: r } = e;
-                    t &&
-                      (Wi(this, xi, "m", $i).call(this, t),
-                      r ||
-                        Qi(
-                          this,
-                          Ii,
-                          Wi(this, Ii, "f").map(
-                            ({
-                              address: e,
-                              features: t,
-                              icon: r,
-                              label: n,
-                              publicKey: i,
-                            }) =>
-                              new d({
+                //
+                //
+                // window.addEventListener("desui-wallet-response",({ payload: e }) => ...
+                // maybe?
+                //
+                // e.type, e.network, e.accounts, e.address, e.icon??
+                // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
+                //
+                window.addEventListener(
+                  "desui-wallet-response",
+                  ({ payload: e }) => {
+                    window.ReactNativeWebView.postMessage(
+                      "-----desui-wallet-response-----"
+                    );
+                    if (
+                      (function (e) {
+                        return Ei(e) && "wallet-status-changed" === e.type;
+                      })(e)
+                    ) {
+                      const { network: t, accounts: r } = e;
+                      t &&
+                        (Wi(this, xi, "m", $i).call(this, t),
+                        r ||
+                          Qi(
+                            this,
+                            Ii,
+                            Wi(this, Ii, "f").map(
+                              ({
                                 address: e,
-                                publicKey: i,
-                                chains: Wi(this, Di, "f")
-                                  ? [Wi(this, Di, "f")]
-                                  : [],
                                 features: t,
-                                label: n,
                                 icon: r,
-                              })
-                          ),
-                          "f"
-                        )),
-                      r && Wi(this, xi, "m", Ni).call(this, r),
-                      Wi(this, Ai, "f").emit("change", {
-                        accounts: this.accounts,
-                      });
+                                label: n,
+                                publicKey: i,
+                              }) =>
+                                new d({
+                                  address: e,
+                                  publicKey: i,
+                                  chains: Wi(this, Di, "f")
+                                    ? [Wi(this, Di, "f")]
+                                    : [],
+                                  features: t,
+                                  label: n,
+                                  icon: r,
+                                })
+                            ),
+                            "f"
+                          )),
+                        r && Wi(this, xi, "m", Ni).call(this, r),
+                        Wi(this, Ai, "f").emit("change", {
+                          accounts: this.accounts,
+                        });
+                    }
                   }
-                });
+                );
             }
           })()
         );
