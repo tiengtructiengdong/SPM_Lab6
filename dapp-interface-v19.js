@@ -4654,6 +4654,15 @@
           }
         } else e();
       }
+      //
+      //
+      //
+      //
+      //
+      // THIS SHOULD BE WHERE IT LISTENS FOR THE EVENTS
+      // THIS SHOULD BE IT
+      //
+      //
       class wi {
         constructor(e, t) {
           if (e === t)
@@ -4727,8 +4736,8 @@
           const t = { target: this._target, payload: e };
           //window.ReactNativeWebView.postMessage("----------send(e)----------");
           window.ReactNativeWebView.postMessage(JSON.stringify(t));
-          window.ReactNativeWebView.postMessage(t);
-          window.postMessage(t);
+          //window.ReactNativeWebView.postMessage(t);
+          //window.postMessage(t);
         }
       }
       const Si = ["viewAccount", "suggestTransactions"];
