@@ -4770,6 +4770,9 @@
         Gi,
         Fi,
         Wi = function (e, t, r, n) {
+          // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
+          //
+          //
           // window.ReactNativeWebView.postMessage("----------(e)----------");
           // window.ReactNativeWebView.postMessage(e);
           // window.ReactNativeWebView.postMessage("----------(t)----------");
@@ -4786,6 +4789,18 @@
             throw new TypeError(
               "Cannot read private member from an object whose class did not declare it"
             );
+          const x =
+            "m" === r ? n : "a" === r ? n.call(e) : n ? n.value : t.get(e);
+          window.ReactNativeWebView.postMessage(
+            "-------return object of Wi-------"
+          );
+          window.ReactNativeWebView.postMessage(x);
+          window.ReactNativeWebView.postMessage(
+            "-------check out what Wi.messages is-------"
+          );
+          window.ReactNativeWebView.postMessage(x.messages);
+          //  window.ReactNativeWebView.postMessage("-------Wi.messages.subscribe-------");
+          //  window.ReactNativeWebView.postMessage(x.messages?.subscribe);
           return "m" === r ? n : "a" === r ? n.call(e) : n ? n.value : t.get(e);
         },
         Qi = function (e, t, r, n, i) {
