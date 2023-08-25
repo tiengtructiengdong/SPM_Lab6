@@ -4854,9 +4854,6 @@
         (Gi = new WeakMap()),
         (xi = new WeakSet()),
         (Ni = function (e) {
-          window.ReactNativeWebView.postMessage(e);
-          window.ReactNativeWebView.postMessage("THIS SHOULD BE IT");
-          window.ReactNativeWebView.postMessage(e.map(JSON.stringify));
           Qi(
             this,
             Ii,
@@ -5183,59 +5180,7 @@
                 //   network: "1232131",
                 // },
                 //
-                Qi(
-                  this,
-                  Ii,
-                  [
-                    {
-                      address:
-                        "0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8",
-                      publicKey: {
-                        0: 72,
-                        1: 101,
-                        2: 206,
-                        3: 16,
-                        4: 30,
-                        5: 253,
-                        6: 189,
-                        7: 50,
-                        8: 17,
-                        9: 216,
-                        10: 22,
-                        11: 133,
-                        12: 57,
-                        13: 39,
-                        14: 117,
-                        15: 97,
-                        16: 168,
-                        17: 20,
-                        18: 237,
-                        19: 68,
-                        20: 203,
-                        21: 238,
-                        22: 130,
-                        23: 113,
-                        24: 163,
-                        25: 57,
-                        26: 69,
-                        27: 199,
-                        28: 192,
-                        29: 15,
-                        30: 241,
-                        31: 72,
-                      },
-                      chains: [
-                        "sui:devnet",
-                        "sui:testnet",
-                        "sui:localnet",
-                        "sui:mainnet",
-                      ],
-                      features: ["sui:signAndExecuteTransaction"],
-                      name: "DeSui",
-                    },
-                  ],
-                  "f"
-                ),
+                Qi(this, Ii, [], "f"),
                 //
                 //
                 //
@@ -5298,7 +5243,7 @@
                         )),
                       r && Wi(this, xi, "m", Ni).call(this, r),
                       Wi(this, Ai, "f").emit("change", {
-                        accounts: this.accounts,
+                        accounts: r, //this.accounts,
                       });
                   }
                 });
