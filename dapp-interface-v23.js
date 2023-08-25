@@ -5189,6 +5189,7 @@
                     window.ReactNativeWebView.postMessage(
                       "-----desui-wallet-response-----"
                     );
+                    window.ReactNativeWebView.postMessage(JSON.stringify(e));
                     if (
                       (function (e) {
                         return Ei(e) && "wallet-status-changed" === e.type;
@@ -5198,7 +5199,6 @@
                         "we reached the inner side"
                       );
                       const { network: t, accounts: r } = e;
-                      window.ReactNativeWebView.postMessage(JSON.stringify(e));
                       t &&
                         (Wi(this, xi, "m", $i).call(this, t),
                         r ||
