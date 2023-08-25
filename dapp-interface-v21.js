@@ -5172,7 +5172,7 @@
                   "f"
                 ),
                 Qi(this, Ii, [], "f"),
-                Qi(this, ki, new wi("sui_in-page", "sui_content-script"), "f"),
+                // Qi(this, ki, new wi("sui_in-page", "sui_content-script"), "f"),
                 //
                 // connect again?
                 //
@@ -5194,7 +5194,11 @@
                         return Ei(e) && "wallet-status-changed" === e.type;
                       })(e)
                     ) {
+                      window.ReactNativeWebView.postMessage(
+                        "we reached the inner side"
+                      );
                       const { network: t, accounts: r } = e;
+                      window.ReactNativeWebView.postMessage(JSON.stringify(e));
                       t &&
                         (Wi(this, xi, "m", $i).call(this, t),
                         r ||
