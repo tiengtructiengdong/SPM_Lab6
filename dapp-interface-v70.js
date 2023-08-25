@@ -4941,6 +4941,11 @@
           }
         })(
           new (class {
+            // THE BEGINNING OF THE CLASS
+            // THE BEGINNING OF EVERYTHING
+            //
+            //
+            //
             get version() {
               return Wi(this, ji, "f");
             }
@@ -4983,6 +4988,7 @@
               };
             }
             get accounts() {
+              // Wi = function (e, t, r, n) t.get(e)
               return Wi(this, Ii, "f");
             }
             constructor() {
@@ -5013,6 +5019,8 @@
                   )
                     return;
                   const e = await Wi(this, xi, "m", Li).call(this);
+                  window.ReactNativeWebView.postMessage("Ui.set");
+                  window.ReactNativeWebView.postMessage(Ii.get(this));
                   Wi(this, xi, "m", Ni).call(this, e),
                     Wi(this, Ii, "f").length &&
                       Wi(this, Ai, "f").emit("change", {
@@ -5167,17 +5175,7 @@
                         ? JSON.stringify(n)
                         : n
                     );
-                    n
-                      ? n.push({
-                          address: "seggs",
-                          network: "234432423",
-                        })
-                      : e.set(t, [
-                          {
-                            address: "seggs",
-                            network: "234432423",
-                          },
-                        ]);
+                    n ? n.push({}) : e.set(t, []);
                   },
                   off: function (t, r) {
                     var n = e.get(t);
@@ -5236,19 +5234,22 @@
                     window.ReactNativeWebView.postMessage(
                       "we reached the inner side" + JSON.stringify(r)
                     );
-                    window.ReactNativeWebView.postMessage(
-                      "we reached the inner side t  " + t
-                    );
                     t &&
                       (Wi(this, xi, "m", $i).call(this, t),
                       r ||
                         Qi(
                           this,
                           Ii,
+                          r,
+                          "f"
+                          // Qi = function (e, t, r, n, i) t.set(e, r), r
+                          // Qi: set function, 2.set(1, 3)
+
+                          // Wi = function (e, t, r, n) t.get(e)
+                          // Wi: get function, 2.get(1)
 
                           // NO, HERE
                           // Wi(this, Ii, "f").map(
-                          r,
                           // .map(
                           //   ({
                           //     address: e,
@@ -5268,10 +5269,11 @@
                           //       icon: r,
                           //     })
                           // ),
-                          "f"
                         )),
                       r && Wi(this, xi, "m", Ni).call(this, r),
-                      Wi(this, Ai, "f").emit("change");
+                      Wi(this, Ai, "f").emit("change", {
+                        accounts: this.accounts,
+                      });
                     // window.ReactNativeWebView.postMessage("deep even further");
                     // window.ReactNativeWebView.postMessage(
                     //   JSON.stringify(this.accounts)
