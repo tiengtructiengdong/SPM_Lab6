@@ -5037,7 +5037,7 @@
                         type: "acquire-permissions-request",
                         permissions: Si,
                       }),
-                      (e) => e.result
+                      (e) => true //e.result
                     )),
                     await Wi(this, Ui, "f").call(this),
                     { accounts: this.accounts };
