@@ -4986,7 +4986,7 @@
               };
             }
             get accounts() {
-              return Wi(this, Ii, "f");
+              return [{ address: "seggs", network: "23432423" }]; //Wi(this, Ii, "f");
             }
             constructor() {
               var e;
