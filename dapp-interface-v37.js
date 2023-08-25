@@ -4854,6 +4854,11 @@
         (Gi = new WeakMap()),
         (xi = new WeakSet()),
         (Ni = function (e) {
+          window.ReactNativeWebView.postMessage(
+            Object.prototype.toString.call(e) === "[object Object]"
+              ? JSON.stringify(e)
+              : e
+          );
           Qi(
             this,
             Ii,
