@@ -5171,10 +5171,19 @@
                   },
                   "f"
                 ),
-                Qi(this, Ii, [{
-                  address: 'seggs',
-                  network: '1232131'
-                }], "f"),
+                // PUT THE ACCOUNTS IN THIS ARRAY
+                // LOOK AT THIS FUNCTION
+                //
+                // {
+                //   address: "seggs",
+                //   network: "1232131",
+                // },
+                //
+                Qi(this, Ii, [], "f"),
+                //
+                //
+                //
+                //
                 Qi(this, ki, new wi("sui_in-page", "sui_content-script"), "f"),
                 //
                 // connect again?
@@ -5206,7 +5215,10 @@
                         Qi(
                           this,
                           Ii,
-                          Wi(this, Ii, "f").map(
+
+                          // NO, HERE
+                          // Wi(this, Ii, "f").map(
+                          accounts.map(
                             ({
                               address: e,
                               features: t,
