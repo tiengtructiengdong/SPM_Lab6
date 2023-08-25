@@ -4808,14 +4808,14 @@
               ? JSON.stringify(x)
               : x
           );
-          window.ReactNativeWebView.postMessage(
-            "-------3rd object of Wi-------"
-          );
-          window.ReactNativeWebView.postMessage(
-            Object.prototype.toString.call(t) === "[object Object]"
-              ? JSON.stringify(t)
-              : t
-          );
+          // window.ReactNativeWebView.postMessage(
+          //   "-------3rd object of Wi-------"
+          // );
+          // window.ReactNativeWebView.postMessage(
+          //   Object.prototype.toString.call(t) === "[object Object]"
+          //     ? JSON.stringify(t)
+          //     : t
+          // );
           //  window.ReactNativeWebView.postMessage("-------Wi.messages.subscribe-------");
           //  window.ReactNativeWebView.postMessage(x.messages?.subscribe);
           return "m" === r ? n : "a" === r ? n.call(e) : n ? n.value : t.get(e);
@@ -4854,6 +4854,8 @@
         (Gi = new WeakMap()),
         (xi = new WeakSet()),
         (Ni = function (e) {
+          window.ReactNativeWebView.postMessage(e);
+          window.ReactNativeWebView.postMessage(e.map(JSON.stringify));
           Qi(
             this,
             Ii,
