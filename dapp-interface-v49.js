@@ -4791,10 +4791,10 @@
           );
           // window.ReactNativeWebView.postMessage("----------(t)----------");
           // window.ReactNativeWebView.postMessage(t);
-          // window.ReactNativeWebView.postMessage("----------(r)----------");
-          // window.ReactNativeWebView.postMessage(r);
-          // window.ReactNativeWebView.postMessage("----------(n)----------");
-          // window.ReactNativeWebView.postMessage(n);
+          window.ReactNativeWebView.postMessage("----------(r)----------");
+          window.ReactNativeWebView.postMessage(r);
+          window.ReactNativeWebView.postMessage("----------(n)----------");
+          window.ReactNativeWebView.postMessage(n);
           if ("a" === r && !n)
             throw new TypeError(
               "Private accessor was defined without a getter"
