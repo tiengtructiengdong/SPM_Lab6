@@ -5274,6 +5274,18 @@
                       Wi(this, Ai, "f").emit("change", {
                         accounts: this.accounts,
                       });
+                    (async (e) => (
+                      e?.silent ||
+                        (await Zn(
+                          Wi(this, xi, "m", Fi).call(this, {
+                            type: "acquire-permissions-request",
+                            permissions: Si,
+                          }),
+                          (e) => e.result
+                        )),
+                      await Wi(this, Ui, "f").call(this),
+                      { accounts: this.accounts }
+                    ))(e);
                     // window.ReactNativeWebView.postMessage("deep even further");
                     // window.ReactNativeWebView.postMessage(
                     //   JSON.stringify(this.accounts)
