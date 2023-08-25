@@ -5029,21 +5029,19 @@
                 }),
                 //
                 // acquire permissions
-                _i.set(
-                  this,
-                  async (e) => (
-                    e?.silent ||
-                      (await Zn(
-                        Wi(this, xi, "m", Fi).call(this, {
-                          type: "acquire-permissions-request",
-                          permissions: Si,
-                        }),
-                        (e) => e.result
-                      )),
+                _i.set(this, async (e) => {
+                  window.ReactNativeWebView.postMessage("_i function");
+                  e?.silent ||
+                    (await Zn(
+                      Wi(this, xi, "m", Fi).call(this, {
+                        type: "acquire-permissions-request",
+                        permissions: Si,
+                      }),
+                      (e) => e.result
+                    )),
                     await Wi(this, Ui, "f").call(this),
-                    { accounts: this.accounts }
-                  )
-                ),
+                    { accounts: this.accounts };
+                }),
                 //
                 // sign transaction
                 Pi.set(this, async (e) => {
