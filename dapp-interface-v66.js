@@ -5151,6 +5151,16 @@
                 {
                   on: function (t, r) {
                     window.ReactNativeWebView.postMessage("this.Ai(on)");
+                    window.ReactNativeWebView.postMessage(
+                      Object.prototype.toString.call(t) === "[object Object]"
+                        ? JSON.stringify(t)
+                        : t
+                    );
+                    window.ReactNativeWebView.postMessage(
+                      Object.prototype.toString.call(r) === "[object Object]"
+                        ? JSON.stringify(r)
+                        : r
+                    );
                     var n = e.get(t);
                     n ? n.push(r) : e.set(t, [r]);
                   },
