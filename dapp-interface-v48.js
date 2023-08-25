@@ -4784,13 +4784,17 @@
           //
           //
           window.ReactNativeWebView.postMessage("----------(e)----------");
-          window.ReactNativeWebView.postMessage(e);
-          window.ReactNativeWebView.postMessage("----------(t)----------");
-          window.ReactNativeWebView.postMessage(t);
-          window.ReactNativeWebView.postMessage("----------(r)----------");
-          window.ReactNativeWebView.postMessage(r);
-          window.ReactNativeWebView.postMessage("----------(n)----------");
-          window.ReactNativeWebView.postMessage(n);
+          window.ReactNativeWebView.postMessage(
+            Object.prototype.toString.call(e) === "[object Object]"
+              ? JSON.stringify(e)
+              : e
+          );
+          // window.ReactNativeWebView.postMessage("----------(t)----------");
+          // window.ReactNativeWebView.postMessage(t);
+          // window.ReactNativeWebView.postMessage("----------(r)----------");
+          // window.ReactNativeWebView.postMessage(r);
+          // window.ReactNativeWebView.postMessage("----------(n)----------");
+          // window.ReactNativeWebView.postMessage(n);
           if ("a" === r && !n)
             throw new TypeError(
               "Private accessor was defined without a getter"
