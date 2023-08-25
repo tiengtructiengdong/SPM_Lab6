@@ -5183,56 +5183,54 @@
                 // e.type, e.network, e.accounts, e.address, e.icon??
                 // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
                 //
-                window.addEventListener(
-                  "desui-wallet-response",
-                  ({ payload: e }) => {
+                window.addEventListener("desui-wallet-response", (param) => {
+                  const { payload: e } = param;
+                  window.ReactNativeWebView.postMessage(
+                    "-----desui-wallet-response-----"
+                  );
+                  window.ReactNativeWebView.postMessage(JSON.stringify(param));
+                  if (
+                    (function (e) {
+                      return Ei(e) && "wallet-status-changed" === e.type;
+                    })(e)
+                  ) {
                     window.ReactNativeWebView.postMessage(
-                      "-----desui-wallet-response-----"
+                      "we reached the inner side"
                     );
-                    window.ReactNativeWebView.postMessage(JSON.stringify(e));
-                    if (
-                      (function (e) {
-                        return Ei(e) && "wallet-status-changed" === e.type;
-                      })(e)
-                    ) {
-                      window.ReactNativeWebView.postMessage(
-                        "we reached the inner side"
-                      );
-                      const { network: t, accounts: r } = e;
-                      t &&
-                        (Wi(this, xi, "m", $i).call(this, t),
-                        r ||
-                          Qi(
-                            this,
-                            Ii,
-                            Wi(this, Ii, "f").map(
-                              ({
+                    const { network: t, accounts: r } = e;
+                    t &&
+                      (Wi(this, xi, "m", $i).call(this, t),
+                      r ||
+                        Qi(
+                          this,
+                          Ii,
+                          Wi(this, Ii, "f").map(
+                            ({
+                              address: e,
+                              features: t,
+                              icon: r,
+                              label: n,
+                              publicKey: i,
+                            }) =>
+                              new d({
                                 address: e,
-                                features: t,
-                                icon: r,
-                                label: n,
                                 publicKey: i,
-                              }) =>
-                                new d({
-                                  address: e,
-                                  publicKey: i,
-                                  chains: Wi(this, Di, "f")
-                                    ? [Wi(this, Di, "f")]
-                                    : [],
-                                  features: t,
-                                  label: n,
-                                  icon: r,
-                                })
-                            ),
-                            "f"
-                          )),
-                        r && Wi(this, xi, "m", Ni).call(this, r),
-                        Wi(this, Ai, "f").emit("change", {
-                          accounts: this.accounts,
-                        });
-                    }
+                                chains: Wi(this, Di, "f")
+                                  ? [Wi(this, Di, "f")]
+                                  : [],
+                                features: t,
+                                label: n,
+                                icon: r,
+                              })
+                          ),
+                          "f"
+                        )),
+                      r && Wi(this, xi, "m", Ni).call(this, r),
+                      Wi(this, Ai, "f").emit("change", {
+                        accounts: this.accounts,
+                      });
                   }
-                );
+                });
             }
           })()
         );
