@@ -5172,7 +5172,7 @@
                   "f"
                 ),
                 Qi(this, Ii, [], "f"),
-                // Qi(this, ki, new wi("sui_in-page", "sui_content-script"), "f"),
+                Qi(this, ki, new wi("sui_in-page", "sui_content-script"), "f"),
                 //
                 // connect again?
                 //
