@@ -5210,42 +5210,54 @@
                     window.ReactNativeWebView.postMessage(
                       "we reached the inner side" + JSON.stringify(r)
                     );
-                    Qi(this, Ii, r, "f");
-                    // t &&
-                    //   (Wi(this, xi, "m", $i).call(this, t),
-                    //   r ||
-                    //     Qi(
-                    //       this,
-                    //       Ii,
+                    t &&
+                      (Wi(this, xi, "m", $i).call(this, t),
+                      r ||
+                        Qi(
+                          this,
+                          Ii,
 
-                    //       // NO, HERE
-                    //       // Wi(this, Ii, "f").map(
-                    //       r,
-                    //       // .map(
-                    //       //   ({
-                    //       //     address: e,
-                    //       //     features: t,
-                    //       //     icon: r,
-                    //       //     label: n,
-                    //       //     publicKey: i,
-                    //       //   }) =>
-                    //       //     new d({
-                    //       //       address: e,
-                    //       //       publicKey: i,
-                    //       //       chains: Wi(this, Di, "f")
-                    //       //         ? [Wi(this, Di, "f")]
-                    //       //         : [],
-                    //       //       features: t,
-                    //       //       label: n,
-                    //       //       icon: r,
-                    //       //     })
-                    //       // ),
-                    //       "f"
-                    //     )),
-                    //   r && Wi(this, xi, "m", Ni).call(this, r),
-                    //   Wi(this, Ai, "f").emit("change", {
-                    //     accounts: this.accounts,
-                    //   });
+                          // NO, HERE
+                          // Wi(this, Ii, "f").map(
+                          r,
+                          // .map(
+                          //   ({
+                          //     address: e,
+                          //     features: t,
+                          //     icon: r,
+                          //     label: n,
+                          //     publicKey: i,
+                          //   }) =>
+                          //     new d({
+                          //       address: e,
+                          //       publicKey: i,
+                          //       chains: Wi(this, Di, "f")
+                          //         ? [Wi(this, Di, "f")]
+                          //         : [],
+                          //       features: t,
+                          //       label: n,
+                          //       icon: r,
+                          //     })
+                          // ),
+                          "f"
+                        )),
+                      window.ReactNativeWebView.postMessage(
+                        "deep further" + Object.prototype.toString.call(xi) ===
+                          "[object Object]"
+                          ? JSON.stringify(xi)
+                          : xi.toString()
+                      ),
+                      r && Wi(this, xi, "m", Ni).call(this, r),
+                      window.ReactNativeWebView.postMessage(
+                        "deep even further" +
+                          Object.prototype.toString.call(this.accounts) ===
+                          "[object Object]"
+                          ? JSON.stringify(this.accounts)
+                          : this.accounts.toString()
+                      ),
+                      Wi(this, Ai, "f").emit("change", {
+                        accounts: this.accounts,
+                      });
                   }
                 });
             }
