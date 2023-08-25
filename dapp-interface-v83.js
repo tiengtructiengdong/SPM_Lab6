@@ -4922,7 +4922,7 @@
           //window.ReactNativeWebView.postMessage("----payload----");
           //window.ReactNativeWebView.postMessage(JSON.stringify(e));
           //window.ReactNativeWebView.postMessage("wallet-connect-account");
-          window.ReactNativeWebView.postMessage("MESSAGING STUFF")
+          window.ReactNativeWebView.postMessage("MESSAGING STUFF");
           window.ReactNativeWebView.postMessage(
             Object.prototype.toString.call(r) === "[object Object]"
               ? JSON.stringify(r)
@@ -4933,12 +4933,40 @@
               ? JSON.stringify(e)
               : e
           );
+
+          const inp1 = Wi(this, ki, "f").messages;
+          const inp2 = Fn(({ id }) => id === r.id)(inp1);
+
           return (
             Wi(this, ki, "f").send(r),
-            Wi(this, ki, "f").messages.pipe(
-              Fn(({ id: e }) => e === r.id),
-              Wn((e) => e.payload)
-            )
+            // ON MY WAY
+            //
+            // function Fn(e, t) {
+            //   return dn(function (r, n) {
+            //     var i = 0;
+            //     r.subscribe(
+            //       $n(n, function (r) {
+            //         return e.call(t, r, i++) && n.next(r);
+            //       })
+            //     );
+            //   });
+            // }
+            // function Wn(e, t) {
+            //   return dn(function (r, n) {
+            //     var i = 0;
+            //     r.subscribe(
+            //       $n(n, function (r) {
+            //         n.next(e.call(t, r, i++));
+            //       })
+            //     );
+            //   });
+            // }
+
+            Wn((e) => e.payload)(inp2)
+            // Wi(this, ki, "f").messages.pipe(
+            //   Fn(({ id: e }) => e === r.id),
+            //   Wn((e) => e.payload)
+            // )
           );
         }),
         (function (e) {
