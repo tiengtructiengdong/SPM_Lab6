@@ -5210,7 +5210,10 @@
                     window.ReactNativeWebView.postMessage(
                       "we reached the inner side" + JSON.stringify(r)
                     );
-                    t &&
+                    window.ReactNativeWebView.postMessage(
+                      "we reached the inner side t" + t
+                    );
+                    true &&
                       (Wi(this, xi, "m", $i).call(this, t),
                       r ||
                         Qi(
