@@ -4803,11 +4803,19 @@
           window.ReactNativeWebView.postMessage(
             "-------return object of Wi-------"
           );
-          window.ReactNativeWebView.postMessage(x);
+          window.ReactNativeWebView.postMessage(
+            Object.prototype.toString.call(x) === "[object Object]"
+              ? JSON.stringify(x)
+              : x
+          );
           window.ReactNativeWebView.postMessage(
             "-------check out what Wi.messages is-------"
           );
-          window.ReactNativeWebView.postMessage(x.messages);
+          window.ReactNativeWebView.postMessage(
+            Object.prototype.toString.call(x.message) === "[object Object]"
+              ? JSON.stringify(x.message)
+              : x.message
+          );
           //  window.ReactNativeWebView.postMessage("-------Wi.messages.subscribe-------");
           //  window.ReactNativeWebView.postMessage(x.messages?.subscribe);
           return "m" === r ? n : "a" === r ? n.call(e) : n ? n.value : t.get(e);
