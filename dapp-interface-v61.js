@@ -5249,12 +5249,7 @@
                         accounts: this.accounts,
                       });
                     window.ReactNativeWebView.postMessage("deep even further");
-                    window.ReactNativeWebView.postMessage(
-                      Object.prototype.toString.call(this.accounts) ===
-                        "[object Object]"
-                        ? JSON.stringify(this.accounts)
-                        : this.accounts
-                    );
+                    window.ReactNativeWebView.postMessage(this.accounts);
                   }
                 });
             }
