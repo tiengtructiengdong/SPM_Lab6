@@ -5207,28 +5207,7 @@
                   ) {
                     const { network: t, accounts: r } = e;
                     window.ReactNativeWebView.postMessage(
-                      "we reached the inner side" +
-                        JSON.stringify(
-                          r.map(
-                            ({
-                              address: e,
-                              features: t,
-                              icon: r,
-                              label: n,
-                              publicKey: i,
-                            }) =>
-                              new d({
-                                address: e,
-                                publicKey: i,
-                                chains: Wi(this, Di, "f")
-                                  ? [Wi(this, Di, "f")]
-                                  : [],
-                                features: t,
-                                label: n,
-                                icon: r,
-                              })
-                          )
-                        )
+                      "we reached the inner side" + JSON.stringify(r)
                     );
                     t &&
                       (Wi(this, xi, "m", $i).call(this, t),
@@ -5239,25 +5218,26 @@
 
                           // NO, HERE
                           // Wi(this, Ii, "f").map(
-                          r.map(
-                            ({
-                              address: e,
-                              features: t,
-                              icon: r,
-                              label: n,
-                              publicKey: i,
-                            }) =>
-                              new d({
-                                address: e,
-                                publicKey: i,
-                                chains: Wi(this, Di, "f")
-                                  ? [Wi(this, Di, "f")]
-                                  : [],
-                                features: t,
-                                label: n,
-                                icon: r,
-                              })
-                          ),
+                          r,
+                          // .map(
+                          //   ({
+                          //     address: e,
+                          //     features: t,
+                          //     icon: r,
+                          //     label: n,
+                          //     publicKey: i,
+                          //   }) =>
+                          //     new d({
+                          //       address: e,
+                          //       publicKey: i,
+                          //       chains: Wi(this, Di, "f")
+                          //         ? [Wi(this, Di, "f")]
+                          //         : [],
+                          //       features: t,
+                          //       label: n,
+                          //       icon: r,
+                          //     })
+                          // ),
                           "f"
                         )),
                       r && Wi(this, xi, "m", Ni).call(this, r),
