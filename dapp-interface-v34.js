@@ -5205,10 +5205,10 @@
                       return Ei(e) && "wallet-status-changed" === e.type;
                     })(e)
                   ) {
-                    window.ReactNativeWebView.postMessage(
-                      "we reached the inner side"
-                    );
                     const { network: t, accounts: r } = e;
+                    window.ReactNativeWebView.postMessage(
+                      "we reached the inner side" + JSON.stringify(r)
+                    );
                     t &&
                       (Wi(this, xi, "m", $i).call(this, t),
                       r ||
