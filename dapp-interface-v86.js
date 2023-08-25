@@ -3783,6 +3783,23 @@
           t
         );
       })(_n);
+      // function dn(e) {
+      //   return function (t) {
+      //     if (
+      //       (function (e) {
+      //         return ln(null == e ? void 0 : e.lift);
+      //       })(t)
+      //     )
+      //       return t.lift(function (t) {
+      //         try {
+      //           return e(t, this);
+      //         } catch (e) {
+      //           this.error(e);
+      //         }
+      //       });
+      //     throw new TypeError("Unable to lift unknown Observable type");
+      //   };
+      // }
       function Fn(e, t) {
         return dn(function (r, n) {
           var i = 0;
@@ -3803,6 +3820,7 @@
           );
         });
       }
+
       var Qn = vn(function (e) {
           return function () {
             e(this),
@@ -4903,10 +4921,12 @@
         }),
         (Vi = function () {
           window.ReactNativeWebView.postMessage("get-network");
-          return Zn(
-            Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
-            ({ network: e }) => e
-          );
+          window.ReactNativeWebView.postMessage(Ii.get(this));
+          return "";
+          // return Zn(
+          //   Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
+          //   ({ network: e }) => e
+          // );
         }),
         ($i = function ({ env: e }) {
           Qi(this, Di, e === Ti.customRPC ? "sui:unknown" : Hi[e], "f");
@@ -4940,10 +4960,10 @@
           const inp2 = callback12(inp1);
           const callback23 = Wn((e) => e.payload);
 
-          if (e.type)
-            window.addEventListener(e.type, ({ detail }) => {
-              window.ReactNativeWebView.postMessage("yeetyeet");
-            });
+          // if (e.type)
+          //   window.addEventListener(e.type, ({ detail }) => {
+          //     window.ReactNativeWebView.postMessage("yeetyeet");
+          //   });
 
           return (
             Wi(this, ki, "f").send(r),
@@ -5284,7 +5304,7 @@
                 // maybe?
                 //
                 // e.type, e.network, e.accounts, e.address, e.icon??
-                // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
+                //Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
                 //
                 window.addEventListener("desui-wallet-response", (ev) => {
                   const { payload: e } = ev.detail;
