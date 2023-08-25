@@ -4904,23 +4904,25 @@
           );
         }),
         (Ri = function (e) {
-          return Zn(
-            Wi(this, xi, "m", Fi).call(this, {
-              type: "has-permissions-request",
-              permissions: e,
-            }),
-            ({ result: e }) => true
-          );
+          // return Zn(
+          //   Wi(this, xi, "m", Fi).call(this, {
+          //     type: "has-permissions-request",
+          //     permissions: e,
+          //   }),
+          //   ({ result: e }) => true
+          // );
+          return true;
         }),
         (Li = function () {
-          window.ReactNativeWebView.postMessage("get-account");
-          return Zn(
-            Wi(this, xi, "m", Fi).call(this, { type: "get-account" }),
-            (e) => e.accounts
-          );
+          //window.ReactNativeWebView.postMessage("get-account");
+          // return Zn(
+          //   Wi(this, xi, "m", Fi).call(this, { type: "get-account" }),
+          //   (e) => e.accounts
+          // );
+          return Ii.get(this);
         }),
         (Vi = function () {
-          window.ReactNativeWebView.postMessage("get-network");
+          //window.ReactNativeWebView.postMessage("get-network");
           window.ReactNativeWebView.postMessage(JSON.stringify(Ii.get(this)));
           return "";
           // return Zn(
@@ -5102,8 +5104,12 @@
                       await Wi(this, xi, "m", Vi).call(this)
                     ),
                     !(await Wi(this, xi, "m", Ri).call(this, ["viewAccount"])))
-                  )
+                  ) {
+                    window.ReactNativeWebView.postMessage(
+                      "Break at viewAccount"
+                    );
                     return;
+                  }
                   const e = await Wi(this, xi, "m", Li).call(this);
                   window.ReactNativeWebView.postMessage("Ui.set");
                   window.ReactNativeWebView.postMessage(Ii.get(this));
