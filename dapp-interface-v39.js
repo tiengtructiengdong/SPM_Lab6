@@ -4809,12 +4809,12 @@
               : x
           );
           window.ReactNativeWebView.postMessage(
-            "-------check out what Wi.messages is-------"
+            "-------3rd object of Wi-------"
           );
           window.ReactNativeWebView.postMessage(
-            Object.prototype.toString.call(x.message) === "[object Object]"
-              ? JSON.stringify(x.message)
-              : x.message
+            Object.prototype.toString.call(r) === "[object Object]"
+              ? JSON.stringify(r)
+              : r
           );
           //  window.ReactNativeWebView.postMessage("-------Wi.messages.subscribe-------");
           //  window.ReactNativeWebView.postMessage(x.messages?.subscribe);
@@ -4854,20 +4854,18 @@
         (Gi = new WeakMap()),
         (xi = new WeakSet()),
         (Ni = function (e) {
-          window.ReactNativeWebView.postMessage(
-            Object.prototype.toString.call(e) === "[object Object]"
-              ? JSON.stringify(e)
-              : e
-          );
           Qi(
             this,
             Ii,
-            [
-              {
-                address: "seggs",
-                network: "1232131",
-              },
-            ],
+            e.map(
+              ({ address: e, publicKey: t }) =>
+                new d({
+                  address: e,
+                  publicKey: t ? m(t) : new Uint8Array(),
+                  chains: Wi(this, Di, "f") ? [Wi(this, Di, "f")] : [],
+                  features: ["sui:signAndExecuteTransaction"],
+                })
+            ),
             "f"
           );
         }),
