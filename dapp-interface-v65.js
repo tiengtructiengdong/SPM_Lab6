@@ -5169,7 +5169,7 @@
                           e(t, r);
                         });
                   },
-                  //all: (e = e || new Map()), // SEEMS LIKE THE ACCOUNT UPDATE TAKES PLACE HERE
+                  all: (e = e || new Map()), // SEEMS LIKE THE ACCOUNT UPDATE TAKES PLACE HERE
                 },
                 "f"
               ),
