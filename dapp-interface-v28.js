@@ -5183,14 +5183,8 @@
                 // e.type, e.network, e.accounts, e.address, e.icon??
                 // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
                 //
-                window.addEventListener("desui-wallet-response", (param) => {
-                  window.ReactNativeWebView.postMessage(param);
-                  window.ReactNativeWebView.postMessage(JSON.stringify(param));
-                  window.ReactNativeWebView.postMessage(param.detail);
-                  window.ReactNativeWebView.postMessage(
-                    JSON.stringify(param.detail)
-                  );
-                  const { payload: e } = param;
+                window.addEventListener("desui-wallet-response", (ev) => {
+                  const { payload: e } = ev.detail;
                   window.ReactNativeWebView.postMessage(
                     "-----desui-wallet-response-----"
                   );
