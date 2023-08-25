@@ -3940,29 +3940,24 @@
                   // WHAT IS GOING ON HERE
                   // WHAT SUBSCRIPTION IS GOING ON HERE
                   //
-                  window.ReactNativeWebView.postMessage(`
-                    e.subscribe(
-                      $n(t, function (e) {
-                        ++r <= 1 && (t.next(e), 1 <= r && t.complete());
-                      })
-                    );
-                  `);
-                  window.ReactNativeWebView.postMessage(
-                    Object.prototype.toString.call(e) === "[object Object]"
-                      ? JSON.stringify(e)
-                      : e
-                  );
-                  e.subscribe(
-                    $n(t, function (e) {
+                  // e: listener of some kind
+                  window.addEventListener(
+                    "desui-wallet-permissions",
+                    function (e) {
                       ++r <= 1 && (t.next(e), 1 <= r && t.complete());
-                    })
+                    }
                   );
+                  // e.subscribe(
+                  //   $n(t, function (e) {
+                  //     ++r <= 1 && (t.next(e), 1 <= r && t.complete());
+                  //   })
+                  // );
                 }),
             Wn((e) => {
               if (e && "error" in (r = e) && !0 === r.error) {
                 window.ReactNativeWebView.postMessage(`
-                Wn((e) => {
-                  if (e && "error" in (r = e) && !0 === r.error) {
+                  Wn((e) => {
+                    if (e && "error" in (r = e) && !0 === r.error) {
                 `);
                 window.ReactNativeWebView.postMessage(e.message);
                 throw new Error(e.message);
