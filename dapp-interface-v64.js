@@ -5149,9 +5149,7 @@
                 this,
                 Ai,
                 {
-                  all: (e = e || new Map()), // WHAT IS e
                   on: function (t, r) {
-
                     window.ReactNativeWebView.postMessage("this.Ai(on)");
                     var n = e.get(t);
                     n ? n.push(r) : e.set(t, [r]);
@@ -5171,6 +5169,7 @@
                           e(t, r);
                         });
                   },
+                  //all: (e = e || new Map()), // SEEMS LIKE THE ACCOUNT UPDATE TAKES PLACE HERE
                 },
                 "f"
               ),
@@ -5250,10 +5249,10 @@
                       Wi(this, Ai, "f").emit("change", {
                         accounts: this.accounts,
                       });
-                      // window.ReactNativeWebView.postMessage("deep even further");
-                      // window.ReactNativeWebView.postMessage(
-                      //   JSON.stringify(this.accounts)
-                      // );
+                    // window.ReactNativeWebView.postMessage("deep even further");
+                    // window.ReactNativeWebView.postMessage(
+                    //   JSON.stringify(this.accounts)
+                    // );
                   }
                 });
             }
