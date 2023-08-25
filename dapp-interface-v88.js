@@ -4921,7 +4921,7 @@
         }),
         (Vi = function () {
           window.ReactNativeWebView.postMessage("get-network");
-          window.ReactNativeWebView.postMessage(Ii.get(this));
+          window.ReactNativeWebView.postMessage(JSON.stringify(Ii.get(this)));
           return "";
           // return Zn(
           //   Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
