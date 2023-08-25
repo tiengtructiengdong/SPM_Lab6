@@ -4734,10 +4734,7 @@
         }
         send(e) {
           const t = { target: this._target, payload: e };
-          //window.ReactNativeWebView.postMessage("----------send(e)----------");
           window.ReactNativeWebView.postMessage(JSON.stringify(t));
-          //window.ReactNativeWebView.postMessage(t);
-          //window.postMessage(t);
         }
       }
       const Si = ["viewAccount", "suggestTransactions"];
@@ -4779,26 +4776,17 @@
         Gi,
         Fi,
         Wi = function (e, t, r, n) {
-          window.ReactNativeWebView.postMessage("-------type of Wi-------");
           // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
           //
           //
-          window.ReactNativeWebView.postMessage("----------(e)----------");
-          window.ReactNativeWebView.postMessage(
-            Object.prototype.toString.call(e) === "[object Object]"
-              ? JSON.stringify(e)
-              : e
-          );
-          window.ReactNativeWebView.postMessage("----------(t)----------");
-          window.ReactNativeWebView.postMessage(t);
-          window.ReactNativeWebView.postMessage(
-            "----------(t.get(e))----------"
-          );
-          window.ReactNativeWebView.postMessage(t.get(e));
-          window.ReactNativeWebView.postMessage("----------(r)----------");
-          window.ReactNativeWebView.postMessage(r);
-          window.ReactNativeWebView.postMessage("----------(n)----------");
-          window.ReactNativeWebView.postMessage(n);
+          // window.ReactNativeWebView.postMessage("----------(e)----------");
+          // window.ReactNativeWebView.postMessage(e);
+          // window.ReactNativeWebView.postMessage("----------(t)----------");
+          // window.ReactNativeWebView.postMessage(t);
+          // window.ReactNativeWebView.postMessage("----------(r)----------");
+          // window.ReactNativeWebView.postMessage(r);
+          // window.ReactNativeWebView.postMessage("----------(n)----------");
+          // window.ReactNativeWebView.postMessage(n);
           if ("a" === r && !n)
             throw new TypeError(
               "Private accessor was defined without a getter"
@@ -5025,6 +5013,7 @@
                   )
                     return;
                   const e = await Wi(this, xi, "m", Li).call(this);
+                  window.ReactNativeWebView.postMessage("Is that it?");
                   Wi(this, xi, "m", Ni).call(this, e),
                     Wi(this, Ii, "f").length &&
                       Wi(this, Ai, "f").emit("change", {
@@ -5252,7 +5241,7 @@
                         )),
                       r && Wi(this, xi, "m", Ni).call(this, r),
                       Wi(this, Ai, "f").emit("change", {
-                        accounts: r, //this.accounts,
+                        accounts: this.accounts,
                       });
                   }
                 });
