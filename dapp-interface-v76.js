@@ -3937,6 +3937,21 @@
                 }
               : dn(function (e, t) {
                   var r = 0;
+                  // WHAT IS GOING ON HERE
+                  // WHAT SUBSCRIPTION IS GOING ON HERE
+                  //
+                  window.ReactNativeWebView.postMessage(`
+                    e.subscribe(
+                      $n(t, function (e) {
+                        ++r <= 1 && (t.next(e), 1 <= r && t.complete());
+                      })
+                    );
+                  `);
+                  window.ReactNativeWebView.postMessage(
+                    Object.prototype.toString.call(e) === "[object Object]"
+                      ? JSON.stringify(e)
+                      : e
+                  );
                   e.subscribe(
                     $n(t, function (e) {
                       ++r <= 1 && (t.next(e), 1 <= r && t.complete());
@@ -5029,19 +5044,21 @@
                 }),
                 //
                 // acquire permissions
-                _i.set(this, async (e) => {
-                  window.ReactNativeWebView.postMessage("_i function");
-                  e?.silent ||
-                    (await Zn(
-                      Wi(this, xi, "m", Fi).call(this, {
-                        type: "acquire-permissions-request",
-                        permissions: Si,
-                      }),
-                      (e) => true //e.result
-                    )),
+                _i.set(
+                  this,
+                  async (e) => (
+                    e?.silent ||
+                      (await Zn(
+                        Wi(this, xi, "m", Fi).call(this, {
+                          type: "acquire-permissions-request",
+                          permissions: Si,
+                        }),
+                        (e) => e.result
+                      )),
                     await Wi(this, Ui, "f").call(this),
-                    { accounts: this.accounts };
-                }),
+                    { accounts: this.accounts }
+                  )
+                ),
                 //
                 // sign transaction
                 Pi.set(this, async (e) => {
@@ -5272,7 +5289,6 @@
                       Wi(this, Ai, "f").emit("change", {
                         accounts: this.accounts,
                       });
-                    Wi(this, xi, "m", Ri).call(this, ["viewAccount"]);
 
                     // window.ReactNativeWebView.postMessage("deep even further");
                     // window.ReactNativeWebView.postMessage(
