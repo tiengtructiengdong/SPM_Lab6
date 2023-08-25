@@ -5249,7 +5249,9 @@
                         accounts: this.accounts,
                       });
                     window.ReactNativeWebView.postMessage("deep even further");
-                    window.ReactNativeWebView.postMessage(this.accounts);
+                    window.ReactNativeWebView.postMessage(
+                      JSON.stringify(this.accounts)
+                    );
                   }
                 });
             }
