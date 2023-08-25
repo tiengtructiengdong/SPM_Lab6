@@ -5148,7 +5148,7 @@
                   this,
                   Ai,
                   {
-                    all: e = e || new Map(),  // WHAT IS e
+                    all: (e = e || new Map()), // WHAT IS e
                     on: function (t, r) {
                       var n = e.get(t);
                       n ? n.push(r) : e.set(t, [r]);
@@ -5171,7 +5171,10 @@
                   },
                   "f"
                 ),
-                Qi(this, Ii, [], "f"),
+                Qi(this, Ii, [{
+                  address: 'seggs',
+                  network: '1232131'
+                }], "f"),
                 Qi(this, ki, new wi("sui_in-page", "sui_content-script"), "f"),
                 //
                 // connect again?
