@@ -3928,7 +3928,15 @@
       var Jn = new Kn(function (e) {
         return e.complete();
       });
+      // CHECK THIS FUNCTION
       function Zn(e, t) {
+        // (await Zn(
+        //   Wi(this, xi, "m", Fi).call(this, {
+        //     type: "acquire-permissions-request",
+        //     permissions: Si,
+        //   }),
+        //   (e) => e.result
+        // ))
         return (
           (r = e.pipe(
             1 <= 0
@@ -3940,18 +3948,18 @@
                   // WHAT IS GOING ON HERE
                   // WHAT SUBSCRIPTION IS GOING ON HERE
                   //
-                  // e: listener of some kind
-                  window.addEventListener(
-                    "desui-wallet-permissions",
-                    function (e) {
-                      ++r <= 1 && (t.next(e), 1 <= r && t.complete());
-                    }
-                  );
-                  // e.subscribe(
-                  //   $n(t, function (e) {
+                  // e: source{source{source...}}
+                  // window.addEventListener(
+                  //   "desui-wallet-permissions",
+                  //   function (e) {
                   //     ++r <= 1 && (t.next(e), 1 <= r && t.complete());
-                  //   })
+                  //   }
                   // );
+                  e.subscribe(
+                    $n(t, function (e) {
+                      ++r <= 1 && (t.next(e), 1 <= r && t.complete());
+                    })
+                  );
                 }),
             Wn((e) => {
               if (e && "error" in (r = e) && !0 === r.error) {
@@ -4878,7 +4886,13 @@
           );
         }),
         (Ri = function (e) {
-          return true;
+          return Zn(
+            Wi(this, xi, "m", Fi).call(this, {
+              type: "has-permissions-request",
+              permissions: e,
+            }),
+            ({ result: e }) => true
+          );
         }),
         (Li = function () {
           window.ReactNativeWebView.postMessage("get-account");
@@ -4889,12 +4903,16 @@
         }),
         (Vi = function () {
           window.ReactNativeWebView.postMessage("get-network");
-          return "";
+          return Zn(
+            Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
+            ({ network: e }) => e
+          );
         }),
         ($i = function ({ env: e }) {
           Qi(this, Di, e === Ti.customRPC ? "sui:unknown" : Hi[e], "f");
         }),
-        // this is where we connect
+        // MESSAGING
+        //
         (Fi = function (e, t) {
           const r = (function (e, t) {
             return { id: t || ii(), payload: e };
@@ -4904,6 +4922,17 @@
           //window.ReactNativeWebView.postMessage("----payload----");
           //window.ReactNativeWebView.postMessage(JSON.stringify(e));
           //window.ReactNativeWebView.postMessage("wallet-connect-account");
+          window.ReactNativeWebView.postMessage("MESSAGING STUFF")
+          window.ReactNativeWebView.postMessage(
+            Object.prototype.toString.call(r) === "[object Object]"
+              ? JSON.stringify(r)
+              : r
+          );
+          window.ReactNativeWebView.postMessage(
+            Object.prototype.toString.call(e) === "[object Object]"
+              ? JSON.stringify(e)
+              : e
+          );
           return (
             Wi(this, ki, "f").send(r),
             Wi(this, ki, "f").messages.pipe(
