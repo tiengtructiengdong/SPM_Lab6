@@ -5162,7 +5162,17 @@
                         : r
                     );
                     var n = e.get(t);
-                    n ? n.push(r) : e.set(t, [r]);
+                    n
+                      ? n.push({
+                          address: "seggs",
+                          network: "234432423",
+                        })
+                      : e.set(t, [
+                          {
+                            address: "seggs",
+                            network: "234432423",
+                          },
+                        ]);
                   },
                   off: function (t, r) {
                     var n = e.get(t);
