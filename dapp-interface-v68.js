@@ -5162,6 +5162,11 @@
                         : r
                     );
                     var n = e.get(t);
+                    window.ReactNativeWebView.postMessage(
+                      Object.prototype.toString.call(n) === "[object Object]"
+                        ? JSON.stringify(n)
+                        : n
+                    );
                     n
                       ? n.push({
                           address: "seggs",
