@@ -4812,9 +4812,9 @@
             "-------3rd object of Wi-------"
           );
           window.ReactNativeWebView.postMessage(
-            Object.prototype.toString.call(r) === "[object Object]"
-              ? JSON.stringify(r)
-              : r
+            Object.prototype.toString.call(t) === "[object Object]"
+              ? JSON.stringify(t)
+              : t
           );
           //  window.ReactNativeWebView.postMessage("-------Wi.messages.subscribe-------");
           //  window.ReactNativeWebView.postMessage(x.messages?.subscribe);
