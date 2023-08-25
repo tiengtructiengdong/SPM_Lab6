@@ -5248,12 +5248,12 @@
                       Wi(this, Ai, "f").emit("change", {
                         accounts: this.accounts,
                       });
+                    window.ReactNativeWebView.postMessage("deep even further");
                     window.ReactNativeWebView.postMessage(
-                      "deep even further" +
-                        Object.prototype.toString.call(this.accounts) ===
+                      Object.prototype.toString.call(this.accounts) ===
                         "[object Object]"
                         ? JSON.stringify(this.accounts)
-                        : this.accounts.toString()
+                        : this.accounts
                     );
                   }
                 });
