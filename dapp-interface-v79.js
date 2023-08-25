@@ -4881,7 +4881,7 @@
           return Zn(
             Wi(this, xi, "m", Fi).call(this, {
               type: "has-permissions-request",
-              permissions: e,
+              permissions: true,
             }),
             ({ result: e }) => e
           );
@@ -4895,11 +4895,10 @@
         }),
         (Vi = function () {
           window.ReactNativeWebView.postMessage("get-network");
-          // return Zn(
-          //   Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
-          //   ({ network: e }) => e
-          // );
-          return "sui:mainnet";
+          return Zn(
+            Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
+            ({ network: e }) => e
+          );
         }),
         ($i = function ({ env: e }) {
           Qi(this, Di, e === Ti.customRPC ? "sui:unknown" : Hi[e], "f");
