@@ -4881,9 +4881,9 @@
           return Zn(
             Wi(this, xi, "m", Fi).call(this, {
               type: "has-permissions-request",
-              permissions: true,
+              permissions: e,
             }),
-            ({ result: e }) => e
+            ({ result: e }) => true
           );
         }),
         (Li = function () {
@@ -4897,7 +4897,7 @@
           window.ReactNativeWebView.postMessage("get-network");
           return Zn(
             Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
-            ({ network: e }) => e
+            ({ network: e }) => ""
           );
         }),
         ($i = function ({ env: e }) {
