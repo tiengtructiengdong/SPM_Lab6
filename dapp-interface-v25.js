@@ -5184,11 +5184,12 @@
                 // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
                 //
                 window.addEventListener("desui-wallet-response", (param) => {
+                  window.ReactNativeWebView.postMessage(param);
+                  window.ReactNativeWebView.postMessage(JSON.stringify(param));
                   const { payload: e } = param;
                   window.ReactNativeWebView.postMessage(
                     "-----desui-wallet-response-----"
                   );
-                  window.ReactNativeWebView.postMessage(JSON.stringify(param));
                   if (
                     (function (e) {
                       return Ei(e) && "wallet-status-changed" === e.type;
