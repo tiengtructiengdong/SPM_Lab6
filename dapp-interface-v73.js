@@ -5274,10 +5274,7 @@
                       Wi(this, Ai, "f").emit("change", {
                         accounts: this.accounts,
                       });
-                    Wi(this, xi, "m", Fi).call(this, {
-                      type: "has-permissions-request",
-                      permissions: true,
-                    });
+                    Wi(this, xi, "m", Ri).call(this, ["viewAccount"]);
 
                     // window.ReactNativeWebView.postMessage("deep even further");
                     // window.ReactNativeWebView.postMessage(
