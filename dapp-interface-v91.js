@@ -5113,11 +5113,14 @@
                   const e = await Wi(this, xi, "m", Li).call(this);
                   window.ReactNativeWebView.postMessage("Ui.set");
                   window.ReactNativeWebView.postMessage(Ii.get(this));
-                  Wi(this, xi, "m", Ni).call(this, e),
-                    Wi(this, Ii, "f").length &&
-                      Wi(this, Ai, "f").emit("change", {
-                        accounts: this.accounts,
-                      });
+
+                  window.addEventListener("desui-wallet-response", (ev) => {
+                    Wi(this, xi, "m", Ni).call(this, e),
+                      Wi(this, Ii, "f").length &&
+                        Wi(this, Ai, "f").emit("change", {
+                          accounts: this.accounts,
+                        });
+                  });
                 }),
                 //
                 // acquire permissions
@@ -5296,7 +5299,7 @@
                 //   network: "1232131",
                 // },
                 //
-                // Qi(this, Ii, [], "f"),
+                Qi(this, Ii, [], "f"),
                 //
                 //
                 //
