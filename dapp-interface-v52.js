@@ -5013,7 +5013,6 @@
                   )
                     return;
                   const e = await Wi(this, xi, "m", Li).call(this);
-                  window.ReactNativeWebView.postMessage("Is that it?");
                   Wi(this, xi, "m", Ni).call(this, e),
                     Wi(this, Ii, "f").length &&
                       Wi(this, Ai, "f").emit("change", {
@@ -5109,11 +5108,8 @@
                   );
                 }),
                 //
-                // permission request?
+                //
                 Gi.set(this, async (e) => {
-                  window.ReactNativeWebView.postMessage(
-                    "-----Gi function-----"
-                  );
                   if (
                     !(await Zn(
                       Wi(this, xi, "m", Fi).call(this, {
@@ -5143,33 +5139,39 @@
                 }),
                 //
                 // have no idea
-                Qi(
-                  this,
-                  Ai,
-                  {
-                    all: (e = e || new Map()), // WHAT IS e
-                    on: function (t, r) {
-                      var n = e.get(t);
-                      n ? n.push(r) : e.set(t, [r]);
-                    },
-                    off: function (t, r) {
-                      var n = e.get(t);
-                      n && (r ? n.splice(n.indexOf(r) >>> 0, 1) : e.set(t, []));
-                    },
-                    emit: function (t, r) {
-                      var n = e.get(t);
-                      n &&
-                        n.slice().map(function (e) {
-                          e(r);
-                        }),
-                        (n = e.get("*")) &&
-                          n.slice().map(function (e) {
-                            e(t, r);
-                          });
-                    },
+                window.ReactNativeWebView.postMessage("right before Qi(this"),
+                window.ReactNativeWebView.postMessage(
+                  Object.prototype.toString.call(e) === "[object Object]"
+                    ? JSON.stringify(e)
+                    : e
+                );
+              Qi(
+                this,
+                Ai,
+                {
+                  all: (e = e || new Map()), // WHAT IS e
+                  on: function (t, r) {
+                    var n = e.get(t);
+                    n ? n.push(r) : e.set(t, [r]);
                   },
-                  "f"
-                ),
+                  off: function (t, r) {
+                    var n = e.get(t);
+                    n && (r ? n.splice(n.indexOf(r) >>> 0, 1) : e.set(t, []));
+                  },
+                  emit: function (t, r) {
+                    var n = e.get(t);
+                    n &&
+                      n.slice().map(function (e) {
+                        e(r);
+                      }),
+                      (n = e.get("*")) &&
+                        n.slice().map(function (e) {
+                          e(t, r);
+                        });
+                  },
+                },
+                "f"
+              ),
                 // PUT THE ACCOUNTS IN THIS ARRAY
                 // LOOK AT THIS FUNCTION
                 //
