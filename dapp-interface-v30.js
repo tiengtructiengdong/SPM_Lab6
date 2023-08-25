@@ -5148,7 +5148,7 @@
                   this,
                   Ai,
                   {
-                    all: { address: "12321" }, //(e = e || new Map()),
+                    all: e = e || new Map(),  // WHAT IS e
                     on: function (t, r) {
                       var n = e.get(t);
                       n ? n.push(r) : e.set(t, [r]);
