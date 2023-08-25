@@ -4857,15 +4857,16 @@
           Qi(
             this,
             Ii,
-            e.map(
-              ({ address: e, publicKey: t }) =>
-                new d({
-                  address: e,
-                  publicKey: t ? m(t) : new Uint8Array(),
-                  chains: Wi(this, Di, "f") ? [Wi(this, Di, "f")] : [],
-                  features: ["sui:signAndExecuteTransaction"],
-                })
-            ),
+            e,
+            // e.map(
+            //   ({ address: e, publicKey: t }) =>
+            //     new d({
+            //       address: e,
+            //       publicKey: t ? m(t) : new Uint8Array(),
+            //       chains: Wi(this, Di, "f") ? [Wi(this, Di, "f")] : [],
+            //       features: ["sui:signAndExecuteTransaction"],
+            //     })
+            // ),
             "f"
           );
         }),
