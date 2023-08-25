@@ -5211,11 +5211,11 @@
                       "we reached the inner side" + JSON.stringify(r)
                     );
                     window.ReactNativeWebView.postMessage(
-                      "we reached the inner side t" + t
+                      "we reached the inner side t  " + t
                     );
                     t &&
                       (Wi(this, xi, "m", $i).call(this, t),
-                      r ||
+                      true ||
                         Qi(
                           this,
                           Ii,
