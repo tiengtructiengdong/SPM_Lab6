@@ -4935,7 +4935,15 @@
           );
 
           const inp1 = Wi(this, ki, "f").messages;
-          const inp2 = Fn(({ id }) => id === r.id)(inp1);
+          window.ReactNativeWebView.postMessage("callbacks");
+
+          const callback12 = Fn(({ id }) => id === r.id);
+          window.ReactNativeWebView.postMessage(callback12);
+
+          const inp2 = callback12(inp1);
+
+          const callback23 = Wn((e) => e.payload);
+          window.ReactNativeWebView.postMessage(callback23);
 
           return (
             Wi(this, ki, "f").send(r),
@@ -4962,7 +4970,7 @@
             //   });
             // }
 
-            Wn((e) => e.payload)(inp2)
+            callbak23(inp2)
             // Wi(this, ki, "f").messages.pipe(
             //   Fn(({ id: e }) => e === r.id),
             //   Wn((e) => e.payload)
