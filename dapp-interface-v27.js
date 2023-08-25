@@ -5187,6 +5187,9 @@
                   window.ReactNativeWebView.postMessage(param);
                   window.ReactNativeWebView.postMessage(JSON.stringify(param));
                   window.ReactNativeWebView.postMessage(param.detail);
+                  window.ReactNativeWebView.postMessage(
+                    JSON.stringify(param.detail)
+                  );
                   const { payload: e } = param;
                   window.ReactNativeWebView.postMessage(
                     "-----desui-wallet-response-----"
