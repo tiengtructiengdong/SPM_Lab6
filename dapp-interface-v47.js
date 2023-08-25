@@ -4779,17 +4779,18 @@
         Gi,
         Fi,
         Wi = function (e, t, r, n) {
+          window.ReactNativeWebView.postMessage("-------type of Wi-------");
           // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
           //
           //
-          // window.ReactNativeWebView.postMessage("----------(e)----------");
-          // window.ReactNativeWebView.postMessage(e);
-          // window.ReactNativeWebView.postMessage("----------(t)----------");
-          // window.ReactNativeWebView.postMessage(t);
-          // window.ReactNativeWebView.postMessage("----------(r)----------");
-          // window.ReactNativeWebView.postMessage(r);
-          // window.ReactNativeWebView.postMessage("----------(n)----------");
-          // window.ReactNativeWebView.postMessage(n);
+          window.ReactNativeWebView.postMessage("----------(e)----------");
+          window.ReactNativeWebView.postMessage(e);
+          window.ReactNativeWebView.postMessage("----------(t)----------");
+          window.ReactNativeWebView.postMessage(t);
+          window.ReactNativeWebView.postMessage("----------(r)----------");
+          window.ReactNativeWebView.postMessage(r);
+          window.ReactNativeWebView.postMessage("----------(n)----------");
+          window.ReactNativeWebView.postMessage(n);
           if ("a" === r && !n)
             throw new TypeError(
               "Private accessor was defined without a getter"
@@ -4986,7 +4987,7 @@
               };
             }
             get accounts() {
-              return [{ address: "seggs", network: "23432423" }]; //Wi(this, Ii, "f");
+              return Wi(this, Ii, "f");
             }
             constructor() {
               var e;
