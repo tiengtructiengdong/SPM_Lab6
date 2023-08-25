@@ -5271,9 +5271,7 @@
                           "f"
                         )),
                       r && Wi(this, xi, "m", Ni).call(this, r),
-                      Wi(this, Ai, "f").emit("change", {
-                        accounts: this.accounts,
-                      });
+                      Wi(this, Ai, "f").emit("change");
                     // window.ReactNativeWebView.postMessage("deep even further");
                     // window.ReactNativeWebView.postMessage(
                     //   JSON.stringify(this.accounts)
