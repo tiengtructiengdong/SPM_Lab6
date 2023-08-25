@@ -3967,17 +3967,17 @@
                   // WHAT SUBSCRIPTION IS GOING ON HERE
                   //
                   // e: source{source{source...}}
-                  // window.addEventListener(
-                  //   "desui-wallet-permissions",
-                  //   function (e) {
-                  //     ++r <= 1 && (t.next(e), 1 <= r && t.complete());
-                  //   }
-                  // );
-                  e.subscribe(
-                    $n(t, function (e) {
+                  window.addEventListener(
+                    "desui-wallet-permissions",
+                    function (e) {
                       ++r <= 1 && (t.next(e), 1 <= r && t.complete());
-                    })
+                    }
                   );
+                  // e.subscribe(
+                  //   $n(t, function (e) {
+                  //     ++r <= 1 && (t.next(e), 1 <= r && t.complete());
+                  //   })
+                  // );
                 }),
             Wn((e) => {
               if (e && "error" in (r = e) && !0 === r.error) {
