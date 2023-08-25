@@ -5206,14 +5206,14 @@
                       return Ei(e) && "wallet-status-changed" === e.type;
                     })(e)
                   ) {
-                    const { network: t, accounts: r } = e;
+                    const { network: t = "sui:testnet", accounts: r } = e;
                     window.ReactNativeWebView.postMessage(
                       "we reached the inner side" + JSON.stringify(r)
                     );
                     window.ReactNativeWebView.postMessage(
                       "we reached the inner side t" + t
                     );
-                    true &&
+                    t &&
                       (Wi(this, xi, "m", $i).call(this, t),
                       r ||
                         Qi(
