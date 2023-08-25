@@ -4855,6 +4855,7 @@
         (xi = new WeakSet()),
         (Ni = function (e) {
           window.ReactNativeWebView.postMessage(e);
+          window.ReactNativeWebView.postMessage("THIS SHOULD BE IT");
           window.ReactNativeWebView.postMessage(e.map(JSON.stringify));
           Qi(
             this,
