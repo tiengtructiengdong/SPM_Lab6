@@ -4878,13 +4878,7 @@
           );
         }),
         (Ri = function (e) {
-          return Zn(
-            Wi(this, xi, "m", Fi).call(this, {
-              type: "has-permissions-request",
-              permissions: e,
-            }),
-            ({ result: e }) => true
-          );
+          return true;
         }),
         (Li = function () {
           window.ReactNativeWebView.postMessage("get-account");
@@ -4895,10 +4889,7 @@
         }),
         (Vi = function () {
           window.ReactNativeWebView.postMessage("get-network");
-          return Zn(
-            Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
-            ({ network: e }) => ""
-          );
+          return "";
         }),
         ($i = function ({ env: e }) {
           Qi(this, Di, e === Ti.customRPC ? "sui:unknown" : Hi[e], "f");
