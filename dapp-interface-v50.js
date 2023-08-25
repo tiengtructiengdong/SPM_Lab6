@@ -4789,8 +4789,12 @@
               ? JSON.stringify(e)
               : e
           );
-          // window.ReactNativeWebView.postMessage("----------(t)----------");
-          // window.ReactNativeWebView.postMessage(t);
+          window.ReactNativeWebView.postMessage("----------(t)----------");
+          window.ReactNativeWebView.postMessage(t);
+          window.ReactNativeWebView.postMessage(
+            "----------(t.get(e))----------"
+          );
+          window.ReactNativeWebView.postMessage(t.get(e));
           window.ReactNativeWebView.postMessage("----------(r)----------");
           window.ReactNativeWebView.postMessage(r);
           window.ReactNativeWebView.postMessage("----------(n)----------");
