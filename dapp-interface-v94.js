@@ -4170,6 +4170,7 @@
                   window.addEventListener(
                     'desui-wallet-permissions',
                     function (e) {
+                      window.ReactNativeWebView.postMessage(JSON.stringify(e));
                       ++r <= 1 && (t.next(e), 1 <= r && t.complete());
                     },
                   );
@@ -5374,18 +5375,13 @@
                       type: 'execute-transaction-request',
                       transaction: {
                         type: 'transaction',
-                        data: {
-                          account:
-                            '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
-                          data:
-                            '{"version":1,"gasConfig":{},"inputs":[{"kind":"Input","value":"0xbd7680fbdc856eb254c6f47293a0ec6fd70557d832848f1ea76ef58dc859c721","index":0,"type":"object"},{"kind":"Input","value":0,"index":1,"type":"pure"},{"kind":"Input","value":"123","index":2,"type":"pure"},{"kind":"Input","value":"","index":3,"type":"pure"},{"kind":"Input","value":"","index":4,"type":"pure"},{"kind":"Input","value":"QmQLCmT5pC6LteR1YQeoFD4E466ZHTSpUZiSDzmAfjdzFE","index":5,"type":"pure"},{"kind":"Input","value":"","index":6,"type":"pure"},{"kind":"Input","value":[],"index":7,"type":"pure"},{"kind":"Input","value":"0x6","index":8,"type":"pure"}],"transactions":[{"kind":"MoveCall","target":"0xdc7ef06e01e56d4e0ad65f2a0cd60e1b10095a57a4230dd56c5697a30090f81d::profile::create_profile","arguments":[{"kind":"Input","value":"0xbd7680fbdc856eb254c6f47293a0ec6fd70557d832848f1ea76ef58dc859c721","index":0,"type":"object"},{"kind":"Input","value":0,"index":1,"type":"pure"},{"kind":"Input","value":"123","index":2,"type":"pure"},{"kind":"Input","value":"","index":3,"type":"pure"},{"kind":"Input","value":"","index":4,"type":"pure"},{"kind":"Input","value":"QmQLCmT5pC6LteR1YQeoFD4E466ZHTSpUZiSDzmAfjdzFE","index":5,"type":"pure"},{"kind":"Input","value":"","index":6,"type":"pure"},{"kind":"Input","value":[],"index":7,"type":"pure"},{"kind":"Input","value":"0x6","index":8,"type":"pure"}],"typeArguments":[]}]}',
-                          options: { showEffects: true },
-                          type: 'transaction',
-                        },
-                        options: {},
+                        data: e.transactionBlock.serialize(),
+                        options: e.options,
                         account:
-                          '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
-                      }.serialize(),
+                          e.account?.address ||
+                          Wi(this, Ii, 'f')[0]?.address ||
+                          '',
+                      },
                     }),
                     e => e.result,
                   );
