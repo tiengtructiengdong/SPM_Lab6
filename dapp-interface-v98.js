@@ -4147,7 +4147,7 @@
         return e.complete();
       });
       // CHECK THIS FUNCTION
-      function Zn(e, t, type) {
+      function Zn(e, t, type = null) {
         // (await Zn(
         //   Wi(this, xi, "m", Fi).call(this, {
         //     type: "acquire-permissions-request",
