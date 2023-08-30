@@ -159,7 +159,6 @@
             })(this, e, t, 'f');
         }
         get detail() {
-          window.ReactNativeWebView.postMessage('get detail()');
           return (function (e, t, r, n) {
             if ('a' === r && !n)
               throw new TypeError(
@@ -223,8 +222,6 @@
         };
       class d {
         constructor(e) {
-          //window.ReactNativeWebView.postMessage("class d instance is created");
-          window.ReactNativeWebView.postMessage(e);
           r.set(this, void 0),
             i.set(this, void 0),
             o.set(this, void 0),
@@ -4628,14 +4625,6 @@
         hi = ['on', 'off'];
 
       function pi(e, t, r, n) {
-        // window.ReactNativeWebView.postMessage(`-----------e------------`);
-        // window.ReactNativeWebView.postMessage(e);
-        // window.ReactNativeWebView.postMessage(`-----------t------------`);
-        // window.ReactNativeWebView.postMessage(t);
-        // window.ReactNativeWebView.postMessage(`-----------r------------`);
-        // window.ReactNativeWebView.postMessage(r);
-        // window.ReactNativeWebView.postMessage(`-----------n------------`);
-        // window.ReactNativeWebView.postMessage(n);
         if ((ln(r) && ((n = r), (r = void 0)), n))
           return pi(e, t, r).pipe(
             ((i = n),
@@ -4970,7 +4959,9 @@
         }
         send(e) {
           const t = { target: this._target, payload: e };
+          window.ReactNativeWebView.postMessage('send something');
           window.ReactNativeWebView.postMessage(JSON.stringify(t));
+          window.ReactNativeWebView.postMessage(JSON.stringify(e));
         }
       }
       const Si = ['viewAccount', 'suggestTransactions'];
@@ -5015,14 +5006,6 @@
           // Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
           //
           //
-          // window.ReactNativeWebView.postMessage("----------(e)----------");
-          // window.ReactNativeWebView.postMessage(e);
-          // window.ReactNativeWebView.postMessage("----------(t)----------");
-          // window.ReactNativeWebView.postMessage(t);
-          // window.ReactNativeWebView.postMessage("----------(r)----------");
-          // window.ReactNativeWebView.postMessage(r);
-          // window.ReactNativeWebView.postMessage("----------(n)----------");
-          // window.ReactNativeWebView.postMessage(n);
           if ('a' === r && !n)
             throw new TypeError(
               'Private accessor was defined without a getter',
@@ -5041,16 +5024,6 @@
               ? JSON.stringify(x)
               : x,
           );
-          // window.ReactNativeWebView.postMessage(
-          //   "-------3rd object of Wi-------"
-          // );
-          // window.ReactNativeWebView.postMessage(
-          //   Object.prototype.toString.call(t) === "[object Object]"
-          //     ? JSON.stringify(t)
-          //     : t
-          // );
-          //  window.ReactNativeWebView.postMessage("-------Wi.messages.subscribe-------");
-          //  window.ReactNativeWebView.postMessage(x.messages?.subscribe);
           return 'm' === r ? n : 'a' === r ? n.call(e) : n ? n.value : t.get(e);
         },
         Qi = function (e, t, r, n, i) {
@@ -5167,44 +5140,9 @@
           //     window.ReactNativeWebView.postMessage("yeetyeet");
           //   });
 
-          return (
-            Wi(this, ki, 'f').send(r),
-            // ON MY WAY
-            //
-            // function Fn(e, t) {
-            //   return dn(function (r, n) {
-            //     var i = 0;
-            //     r.subscribe(
-            //       $n(n, function (r) {
-            //         return e.call(t, r, i++) && n.next(r);
-            //       })
-            //     );
-            //   });
-            // }
-            // function Wn(e, t) {
-            //   return dn(function (r, n) {
-            //     var i = 0;
-            //     r.subscribe(
-            //       $n(n, function (r) {
-            //         n.next(e.call(t, r, i++));
-            //       })
-            //     );
-            //   });
-            // }
-
-            callback23(inp2)
-            // Wi(this, ki, "f").messages.pipe(
-            //   Fn(({ id: e }) => e === r.id),
-            //   Wn((e) => e.payload)
-            // )
-          );
+          return Wi(this, ki, 'f').send(r), callback23(inp2);
         }),
         (function (e) {
-          window.ReactNativeWebView.postMessage(
-            'const r = ({ register: t }) => t(e);',
-          );
-          //window.ReactNativeWebView.postMessage(t);
-          //window.ReactNativeWebView.postMessage(e);
           const r = ({ register: t }) => t(e);
           try {
             window.dispatchEvent(new t(r));
@@ -5442,55 +5380,49 @@
                 }),
                 //
                 // have no idea
-                window.ReactNativeWebView.postMessage('right before Qi(this'),
-                window.ReactNativeWebView.postMessage(
-                  Object.prototype.toString.call(e) === '[object Object]'
-                    ? JSON.stringify(e)
-                    : e,
-                );
-              Qi(
-                this,
-                Ai,
-                {
-                  on: function (t, r) {
-                    window.ReactNativeWebView.postMessage('this.Ai(on)');
-                    window.ReactNativeWebView.postMessage(
-                      Object.prototype.toString.call(t) === '[object Object]'
-                        ? JSON.stringify(t)
-                        : t,
-                    );
-                    window.ReactNativeWebView.postMessage(
-                      Object.prototype.toString.call(r) === '[object Object]'
-                        ? JSON.stringify(r)
-                        : r,
-                    );
-                    var n = e.get(t);
-                    window.ReactNativeWebView.postMessage(
-                      Object.prototype.toString.call(n) === '[object Object]'
-                        ? JSON.stringify(n)
-                        : n,
-                    );
-                    n ? n.push({}) : e.set(t, []);
-                  },
-                  off: function (t, r) {
-                    var n = e.get(t);
-                    n && (r ? n.splice(n.indexOf(r) >>> 0, 1) : e.set(t, []));
-                  },
-                  emit: function (t, r) {
-                    var n = e.get(t);
-                    n &&
-                      n.slice().map(function (e) {
-                        e(r);
-                      }),
-                      (n = e.get('*')) &&
+                Qi(
+                  this,
+                  Ai,
+                  {
+                    on: function (t, r) {
+                      window.ReactNativeWebView.postMessage('this.Ai(on)');
+                      window.ReactNativeWebView.postMessage(
+                        Object.prototype.toString.call(t) === '[object Object]'
+                          ? JSON.stringify(t)
+                          : t,
+                      );
+                      window.ReactNativeWebView.postMessage(
+                        Object.prototype.toString.call(r) === '[object Object]'
+                          ? JSON.stringify(r)
+                          : r,
+                      );
+                      var n = e.get(t);
+                      window.ReactNativeWebView.postMessage(
+                        Object.prototype.toString.call(n) === '[object Object]'
+                          ? JSON.stringify(n)
+                          : n,
+                      );
+                      n ? n.push({}) : e.set(t, []);
+                    },
+                    off: function (t, r) {
+                      var n = e.get(t);
+                      n && (r ? n.splice(n.indexOf(r) >>> 0, 1) : e.set(t, []));
+                    },
+                    emit: function (t, r) {
+                      var n = e.get(t);
+                      n &&
                         n.slice().map(function (e) {
-                          e(t, r);
-                        });
+                          e(r);
+                        }),
+                        (n = e.get('*')) &&
+                          n.slice().map(function (e) {
+                            e(t, r);
+                          });
+                    },
+                    all: (e = e || new Map()), // SEEMS LIKE THE ACCOUNT UPDATE TAKES PLACE HERE
                   },
-                  all: (e = e || new Map()), // SEEMS LIKE THE ACCOUNT UPDATE TAKES PLACE HERE
-                },
-                'f',
-              ),
+                  'f',
+                ),
                 Qi(this, Ii, [], 'f'),
                 Qi(this, ki, new wi('sui_in-page', 'sui_content-script'), 'f'),
                 window.addEventListener('desui-wallet-response', ev => {
@@ -5547,11 +5479,6 @@
                       Wi(this, Ai, 'f').emit('change', {
                         accounts: this.accounts,
                       });
-
-                    // window.ReactNativeWebView.postMessage("deep even further");
-                    // window.ReactNativeWebView.postMessage(
-                    //   JSON.stringify(this.accounts)
-                    // );
                   }
                 });
             }
