@@ -5144,17 +5144,18 @@
           //window.ReactNativeWebView.postMessage("----payload----");
           //window.ReactNativeWebView.postMessage(JSON.stringify(e));
           //window.ReactNativeWebView.postMessage("wallet-connect-account");
-          window.ReactNativeWebView.postMessage('MESSAGING STUFF');
-          window.ReactNativeWebView.postMessage(
-            Object.prototype.toString.call(r) === '[object Object]'
-              ? JSON.stringify(r)
-              : r,
-          );
-          window.ReactNativeWebView.postMessage(
-            Object.prototype.toString.call(e) === '[object Object]'
-              ? JSON.stringify(e)
-              : e,
-          );
+
+          // window.ReactNativeWebView.postMessage('MESSAGING STUFF');
+          // window.ReactNativeWebView.postMessage(
+          //   Object.prototype.toString.call(r) === '[object Object]'
+          //     ? JSON.stringify(r)
+          //     : r,
+          // );
+          // window.ReactNativeWebView.postMessage(
+          //   Object.prototype.toString.call(e) === '[object Object]'
+          //     ? JSON.stringify(e)
+          //     : e,
+          // );
 
           const inp1 = Wi(this, ki, 'f').messages;
           const callback12 = Fn(({ id }) => id === r.id);
@@ -5368,32 +5369,23 @@
                     throw new Error(
                       'Unexpect transaction format found. Ensure that you are using the `Transaction` class.',
                     );
-                  window.ReactNativeWebView.postMessage(
-                    JSON.stringify({
-                      type: 'execute-transaction-request',
-                      transaction: {
-                        type: 'transaction',
-                        data: e.transactionBlock.serialize(),
-                        options: e.options,
-                        account:
-                          e.account?.address ||
-                          Wi(this, Ii, 'f')[0]?.address ||
-                          '',
-                      },
-                    }),
-                  );
                   return Zn(
                     Wi(this, xi, 'm', Fi).call(this, {
                       type: 'execute-transaction-request',
                       transaction: {
                         type: 'transaction',
-                        data: e.transactionBlock.serialize(),
-                        options: e.options,
+                        data: {
+                          account:
+                            '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
+                          data:
+                            '{"version":1,"gasConfig":{},"inputs":[{"kind":"Input","value":"0xbd7680fbdc856eb254c6f47293a0ec6fd70557d832848f1ea76ef58dc859c721","index":0,"type":"object"},{"kind":"Input","value":0,"index":1,"type":"pure"},{"kind":"Input","value":"123","index":2,"type":"pure"},{"kind":"Input","value":"","index":3,"type":"pure"},{"kind":"Input","value":"","index":4,"type":"pure"},{"kind":"Input","value":"QmQLCmT5pC6LteR1YQeoFD4E466ZHTSpUZiSDzmAfjdzFE","index":5,"type":"pure"},{"kind":"Input","value":"","index":6,"type":"pure"},{"kind":"Input","value":[],"index":7,"type":"pure"},{"kind":"Input","value":"0x6","index":8,"type":"pure"}],"transactions":[{"kind":"MoveCall","target":"0xdc7ef06e01e56d4e0ad65f2a0cd60e1b10095a57a4230dd56c5697a30090f81d::profile::create_profile","arguments":[{"kind":"Input","value":"0xbd7680fbdc856eb254c6f47293a0ec6fd70557d832848f1ea76ef58dc859c721","index":0,"type":"object"},{"kind":"Input","value":0,"index":1,"type":"pure"},{"kind":"Input","value":"123","index":2,"type":"pure"},{"kind":"Input","value":"","index":3,"type":"pure"},{"kind":"Input","value":"","index":4,"type":"pure"},{"kind":"Input","value":"QmQLCmT5pC6LteR1YQeoFD4E466ZHTSpUZiSDzmAfjdzFE","index":5,"type":"pure"},{"kind":"Input","value":"","index":6,"type":"pure"},{"kind":"Input","value":[],"index":7,"type":"pure"},{"kind":"Input","value":"0x6","index":8,"type":"pure"}],"typeArguments":[]}]}',
+                          options: { showEffects: true },
+                          type: 'transaction',
+                        },
+                        options: {},
                         account:
-                          e.account?.address ||
-                          Wi(this, Ii, 'f')[0]?.address ||
-                          '',
-                      },
+                          '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
+                      }.serialize(),
                     }),
                     e => e.result,
                   );
@@ -5505,30 +5497,8 @@
                 },
                 'f',
               ),
-                // PUT THE ACCOUNTS IN THIS ARRAY
-                // LOOK AT THIS FUNCTION
-                //
-                // {
-                //   address: "seggs",
-                //   network: "1232131",
-                // },
-                //
                 Qi(this, Ii, [], 'f'),
-                //
-                //
-                //
-                //
                 Qi(this, ki, new wi('sui_in-page', 'sui_content-script'), 'f'),
-                //
-                // connect again?
-                //
-                //
-                // window.addEventListener("desui-wallet-response",({ payload: e }) => ...
-                // maybe?
-                //
-                // e.type, e.network, e.accounts, e.address, e.icon??
-                //Wi(this, ki, "f").messages.subscribe(({ payload: e }) => {
-                //
                 window.addEventListener('desui-wallet-response', ev => {
                   const { payload: e } = ev.detail;
                   window.ReactNativeWebView.postMessage(
