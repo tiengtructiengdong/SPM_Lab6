@@ -4155,6 +4155,10 @@
         //   }),
         //   (e) => e.result
         // ))
+        window.ReactNativeWebView.postMessage(`
+                  t.next(e)
+                `);
+        window.ReactNativeWebView.postMessage(t.next(e));
         return (
           (r = e.pipe(
             1 <= 0
