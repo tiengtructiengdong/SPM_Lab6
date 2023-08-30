@@ -4147,7 +4147,7 @@
         return e.complete();
       });
       // CHECK THIS FUNCTION
-      function Zn(e, t) {
+      function Zn(e, t, type) {
         // (await Zn(
         //   Wi(this, xi, "m", Fi).call(this, {
         //     type: "acquire-permissions-request",
@@ -4168,7 +4168,7 @@
                   //
                   // e: source{source{source...}}
                   window.addEventListener(
-                    'desui-wallet-permissions',
+                    type || 'desui-wallet-permissions',
                     function (e) {
                       ++r <= 1 && (t.next(e), 1 <= r && t.complete());
                     },
@@ -5123,7 +5123,6 @@
         }),
         (Vi = function () {
           //window.ReactNativeWebView.postMessage("get-network");
-          window.ReactNativeWebView.postMessage(JSON.stringify(Ii.get(this)));
           return '';
           // return Zn(
           //   Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
@@ -5312,12 +5311,6 @@
                     return;
                   }
                   const e = await Wi(this, xi, 'm', Li).call(this);
-                  window.ReactNativeWebView.postMessage('e thing');
-                  window.ReactNativeWebView.postMessage(
-                    Object.prototype.toString.call(e) === '[object Object]'
-                      ? JSON.stringify(e)
-                      : e,
-                  );
 
                   window.addEventListener('desui-wallet-response', ev => {
                     Wi(this, xi, 'm', Ni).call(this, e),
@@ -5339,6 +5332,7 @@
                           permissions: Si,
                         }),
                         e => e.result,
+                        'acquire-permissions-request',
                       )),
                     await Wi(this, Ui, 'f').call(this),
                     { accounts: this.accounts }
