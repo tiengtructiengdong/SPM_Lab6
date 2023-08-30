@@ -4170,6 +4170,7 @@
                   window.addEventListener(
                     'desui-wallet-permissions',
                     function (e) {
+                      window.ReactNativeWebView.postMessage('this is the e');
                       window.ReactNativeWebView.postMessage(JSON.stringify(e));
                       ++r <= 1 && (t.next(e), 1 <= r && t.complete());
                     },
