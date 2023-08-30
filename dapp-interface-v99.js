@@ -4147,7 +4147,7 @@
         return e.complete();
       });
       // CHECK THIS FUNCTION
-      function Zn(e, t, type = null) {
+      function Zn(e, t, type) {
         // (await Zn(
         //   Wi(this, xi, "m", Fi).call(this, {
         //     type: "acquire-permissions-request",
@@ -5332,7 +5332,6 @@
                           permissions: Si,
                         }),
                         e => e.result,
-                        'acquire-permissions-request',
                       )),
                     await Wi(this, Ui, 'f').call(this),
                     { accounts: this.accounts }
@@ -5358,6 +5357,7 @@
                       },
                     }),
                     e => e.result,
+                    null,
                   );
                 }),
                 //
@@ -5381,6 +5381,7 @@
                       },
                     }),
                     e => e.result,
+                    'execute-transaction-request',
                   );
                 }),
                 //
