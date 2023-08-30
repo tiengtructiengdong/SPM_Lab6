@@ -4170,8 +4170,6 @@
                   window.addEventListener(
                     'desui-wallet-permissions',
                     function (e) {
-                      window.ReactNativeWebView.postMessage('this is the e');
-                      window.ReactNativeWebView.postMessage(JSON.stringify(e));
                       ++r <= 1 && (t.next(e), 1 <= r && t.complete());
                     },
                   );
@@ -5314,8 +5312,12 @@
                     return;
                   }
                   const e = await Wi(this, xi, 'm', Li).call(this);
-                  window.ReactNativeWebView.postMessage('Ui.set');
-                  window.ReactNativeWebView.postMessage(Ii.get(this));
+                  window.ReactNativeWebView.postMessage('e thing');
+                  window.ReactNativeWebView.postMessage(
+                    Object.prototype.toString.call(e) === '[object Object]'
+                      ? JSON.stringify(e)
+                      : e,
+                  );
 
                   window.addEventListener('desui-wallet-response', ev => {
                     Wi(this, xi, 'm', Ni).call(this, e),
