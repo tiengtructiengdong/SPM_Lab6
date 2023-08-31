@@ -3993,14 +3993,11 @@
       function Fn(e, t) {
         return dn(function (r, n) {
           var i = 0;
-          // r.subscribe(
-          //   $n(n, function (r) {
-          //     return e.call(t, r, i++) && n.next(r);
-          //   }),
-          // );
-          window.addEventListener('desui-wallet-Fn', function (r) {
-            return e.call(t, r, i++) && n.next(r);
-          });
+          r.subscribe(
+            $n(n, function (r) {
+              return e.call(t, r, i++) && n.next(r);
+            }),
+          );
         });
       }
 
@@ -4008,14 +4005,11 @@
       function Wn(e, t) {
         return dn(function (r, n) {
           var i = 0;
-          // r.subscribe(
-          //   $n(n, function (r) {
-          //     n.next(e.call(t, r, i++));
-          //   }),
-          // );
-          window.addEventListener('desui-wallet-Wn', function (r) {
-            n.next(e.call(t, r, i++));
-          });
+          r.subscribe(
+            $n(n, function (r) {
+              n.next(e.call(t, r, i++));
+            }),
+          );
         });
       }
 
