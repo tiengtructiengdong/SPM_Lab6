@@ -5307,10 +5307,10 @@
                       );
                       window.ReactNativeWebView.postMessage(e.result);
                       // problem: e is a CustomEvent
-                      if (typeof e === CustomEvent) {
-                        return e;
-                      }
-                      return e.result;
+                      // if (typeof e === CustomEvent) {
+                      //   return e;
+                      // }
+                      return true;
                     },
                     'execute-transaction-request',
                   );
