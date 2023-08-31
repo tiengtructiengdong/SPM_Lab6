@@ -3982,41 +3982,40 @@
           t
         );
       })(_n);
-      // function dn(e) {
-      //   return function (t) {
-      //     if (
-      //       (function (e) {
-      //         return ln(null == e ? void 0 : e.lift);
-      //       })(t)
-      //     )
-      //       return t.lift(function (t) {
-      //         try {
-      //           return e(t, this);
-      //         } catch (e) {
-      //           this.error(e);
-      //         }
-      //       });
-      //     throw new TypeError("Unable to lift unknown Observable type");
-      //   };
-      // }
+
+      // what does it do
+      // window.addEventListener(
+      //   type || 'desui-wallet-permissions',
+      //   function (e) {
+      //     ++r <= 1 && (t.next(e), 1 <= r && t.complete());
+      //   },
+      // );
       function Fn(e, t) {
         return dn(function (r, n) {
           var i = 0;
-          r.subscribe(
-            $n(n, function (r) {
-              return e.call(t, r, i++) && n.next(r);
-            }),
-          );
+          // r.subscribe(
+          //   $n(n, function (r) {
+          //     return e.call(t, r, i++) && n.next(r);
+          //   }),
+          // );
+          window.addEventListener('desui-wallet-Fn', function (r) {
+            return e.call(t, r, i++) && n.next(r);
+          });
         });
       }
+
+      // what does it do
       function Wn(e, t) {
         return dn(function (r, n) {
           var i = 0;
-          r.subscribe(
-            $n(n, function (r) {
-              n.next(e.call(t, r, i++));
-            }),
-          );
+          // r.subscribe(
+          //   $n(n, function (r) {
+          //     n.next(e.call(t, r, i++));
+          //   }),
+          // );
+          window.addEventListener('desui-wallet-Wn', function (r) {
+            n.next(e.call(t, r, i++));
+          });
         });
       }
 
