@@ -5310,7 +5310,7 @@
                       // if (typeof e === CustomEvent) {
                       //   return e;
                       // }
-                      return true;
+                      return { approved: true };
                     },
                     'execute-transaction-request',
                   );
