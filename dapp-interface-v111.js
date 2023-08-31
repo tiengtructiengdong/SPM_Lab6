@@ -5249,7 +5249,16 @@
                           type: 'acquire-permissions-request',
                           permissions: Si,
                         }),
-                        e => e.result,
+                        e => {
+                          window.ReactNativeWebView.postMessage('result?!!!');
+                          window.ReactNativeWebView.postMessage(
+                            Object.prototype.toString.call(e) ===
+                              '[object Object]'
+                              ? JSON.stringify(e)
+                              : e,
+                          );
+                          return e.result;
+                        },
                       )),
                     await Wi(this, Ui, 'f').call(this),
                     { accounts: this.accounts }
