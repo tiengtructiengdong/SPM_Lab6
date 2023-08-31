@@ -4189,15 +4189,24 @@
               return t(e);
             }),
           )),
+          // here
           new Promise(function (e, t) {
             var n,
               i = !1;
             r.subscribe({
               next: function (e) {
+                window.ReactNativeWebView.postMessage(`
+                  nextnextnext
+                `);
+                window.ReactNativeWebView.postMessage(e);
                 (n = e), (i = !0);
               },
               error: t,
               complete: function () {
+                window.ReactNativeWebView.postMessage(`
+                  complete
+                `);
+                window.ReactNativeWebView.postMessage(t);
                 i ? e(n) : t(new Qn());
               },
             });
@@ -5111,34 +5120,12 @@
           const r = (function (e, t) {
             return { id: t || ii(), payload: e };
           })(e, t);
-          //window.ReactNativeWebView.postMessage("----id----");
-          //window.ReactNativeWebView.postMessage(t || ii());
-          //window.ReactNativeWebView.postMessage("----payload----");
-          //window.ReactNativeWebView.postMessage(JSON.stringify(e));
-          //window.ReactNativeWebView.postMessage("wallet-connect-account");
-
-          // window.ReactNativeWebView.postMessage('MESSAGING STUFF');
-          // window.ReactNativeWebView.postMessage(
-          //   Object.prototype.toString.call(r) === '[object Object]'
-          //     ? JSON.stringify(r)
-          //     : r,
-          // );
-          // window.ReactNativeWebView.postMessage(
-          //   Object.prototype.toString.call(e) === '[object Object]'
-          //     ? JSON.stringify(e)
-          //     : e,
-          // );
 
           const inp1 = Wi(this, ki, 'f').messages;
           const callback12 = Fn(({ id }) => id === r.id);
 
           const inp2 = callback12(inp1);
           const callback23 = Wn(e => e.payload);
-
-          // if (e.type)
-          //   window.addEventListener(e.type, ({ detail }) => {
-          //     window.ReactNativeWebView.postMessage("yeetyeet");
-          //   });
 
           return Wi(this, ki, 'f').send(r), callback23(inp2);
         }),
@@ -5444,7 +5431,25 @@
                       r ||
                         Qi(
                           this,
-                          Ii,
+                          Wi(this, Ii, 'f').map(
+                            ({
+                              address: e,
+                              features: t,
+                              icon: r,
+                              label: n,
+                              publicKey: i,
+                            }) =>
+                              new d({
+                                address: e,
+                                publicKey: i,
+                                chains: Wi(this, Di, 'f')
+                                  ? [Wi(this, Di, 'f')]
+                                  : [],
+                                features: t,
+                                label: n,
+                                icon: r,
+                              }),
+                          ),
                           r,
                           'f',
                           // Qi = function (e, t, r, n, i) t.set(e, r), r
@@ -5452,28 +5457,6 @@
 
                           // Wi = function (e, t, r, n) t.get(e)
                           // Wi: get function, 2.get(1)
-
-                          // NO, HERE
-                          // Wi(this, Ii, "f").map(
-                          // .map(
-                          //   ({
-                          //     address: e,
-                          //     features: t,
-                          //     icon: r,
-                          //     label: n,
-                          //     publicKey: i,
-                          //   }) =>
-                          //     new d({
-                          //       address: e,
-                          //       publicKey: i,
-                          //       chains: Wi(this, Di, "f")
-                          //         ? [Wi(this, Di, "f")]
-                          //         : [],
-                          //       features: t,
-                          //       label: n,
-                          //       icon: r,
-                          //     })
-                          // ),
                         )),
                       r && Wi(this, xi, 'm', Ni).call(this, r),
                       Wi(this, Ai, 'f').emit('change', {
