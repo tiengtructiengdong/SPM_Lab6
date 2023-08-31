@@ -5308,7 +5308,9 @@
                       window.ReactNativeWebView.postMessage(e.result);
                       // problem: e is a CustomEvent
                       if (typeof e === CustomEvent) {
-                        window.dispatchEvent(e);
+                        window.dispatchEvent(e, x=>{
+                          window.ReactNativeWebView.postMessage(x);
+                        });
                       }
                       return { approved: true };
                     },
