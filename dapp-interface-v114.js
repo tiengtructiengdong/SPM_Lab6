@@ -4191,7 +4191,7 @@
                 window.ReactNativeWebView.postMessage(`
                   nextnextnext
                 `);
-                window.ReactNativeWebView.postMessage(e);
+                window.ReactNativeWebView.postMessage(JSON.stringify(e));
                 (n = e), (i = !0);
               },
               error: t,
@@ -5298,22 +5298,7 @@
                           '',
                       },
                     }),
-                    e => {
-                      window.ReactNativeWebView.postMessage('result?');
-                      window.ReactNativeWebView.postMessage(
-                        Object.prototype.toString.call(e) === '[object Object]'
-                          ? JSON.stringify(e)
-                          : e,
-                      );
-                      window.ReactNativeWebView.postMessage(e.result);
-                      // problem: e is a CustomEvent
-                      if (typeof e === CustomEvent) {
-                        window.dispatchEvent(e, x=>{
-                          window.ReactNativeWebView.postMessage(x);
-                        });
-                      }
-                      return { approved: true };
-                    },
+                    e => e.result,
                     'execute-transaction-request',
                   );
                 }),
