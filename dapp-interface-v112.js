@@ -5249,16 +5249,7 @@
                           type: 'acquire-permissions-request',
                           permissions: Si,
                         }),
-                        e => {
-                          window.ReactNativeWebView.postMessage('result?!!!');
-                          window.ReactNativeWebView.postMessage(
-                            Object.prototype.toString.call(e) ===
-                              '[object Object]'
-                              ? JSON.stringify(e)
-                              : e,
-                          );
-                          return e.result;
-                        },
+                        e => e.result,
                       )),
                     await Wi(this, Ui, 'f').call(this),
                     { accounts: this.accounts }
@@ -5316,9 +5307,9 @@
                       );
                       window.ReactNativeWebView.postMessage(e.result);
                       // problem: e is a CustomEvent
-                      // if (typeof e === CustomEvent) {
-                      //   return e;
-                      // }
+                      if (typeof e === CustomEvent) {
+                        window.dispatchEvent(e);
+                      }
                       return { approved: true };
                     },
                     'execute-transaction-request',
