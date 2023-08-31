@@ -5298,7 +5298,11 @@
                           '',
                       },
                     }),
-                    e => e.result,
+                    e => {
+                      window.ReactNativeWebView.postMessage('result?');
+                      window.ReactNativeWebView.postMessage(e.serialize());
+                      return e.result;
+                    },
                     'execute-transaction-request',
                   );
                 }),
