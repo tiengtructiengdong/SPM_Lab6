@@ -5300,7 +5300,11 @@
                     }),
                     e => {
                       window.ReactNativeWebView.postMessage('result?');
-                      window.ReactNativeWebView.postMessage(e.serialize());
+                      window.ReactNativeWebView.postMessage(
+                        Object.prototype.toString.call(e) === '[object Object]'
+                          ? JSON.stringify(e)
+                          : e,
+                      );
                       return e.result;
                     },
                     'execute-transaction-request',
