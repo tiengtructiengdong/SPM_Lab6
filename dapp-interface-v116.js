@@ -5298,92 +5298,107 @@
                           '',
                       },
                     }),
-                    e => ({
-                      digest: '7nQc6tA2SVsGTvM9w5BoNggiTijW1t6qrEfk18JrFgMj',
-                      effects: {
-                        messageVersion: 'v1',
-                        status: {
-                          status: 'success',
-                        },
-                        executedEpoch: '140',
-                        gasUsed: {
-                          computationCost: '752000',
-                          storageCost: '3526400',
-                          storageRebate: '3453516',
-                          nonRefundableStorageFee: '34884',
-                        },
-                        modifiedAtVersions: [
-                          {
-                            objectId:
-                              '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
-                            sequenceNumber: '19500108',
-                          },
-                          {
-                            objectId:
-                              '0x1c95229674cc7d5b98d727654dbb7174a9e57f9dc7dfe137fa9334fd7f41ad6c',
-                            sequenceNumber: '19500108',
-                          },
-                        ],
-                        sharedObjects: [
-                          {
-                            objectId:
-                              '0x0000000000000000000000000000000000000000000000000000000000000006',
-                            version: 11707511,
-                            digest:
-                              '3utYxzSRVNtt1FjgvGU4Dzfyitrv1YK5t84cB46KpMJ9',
-                          },
-                        ],
-                        transactionDigest:
-                          '7nQc6tA2SVsGTvM9w5BoNggiTijW1t6qrEfk18JrFgMj',
-                        mutated: [
-                          {
-                            owner: {
-                              AddressOwner:
-                                '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
-                            },
-                            reference: {
-                              objectId:
-                                '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
-                              version: 19500109,
-                              digest:
-                                '9BW1d8JdCnd9zcvwTTdfmRfsMrgYeTJwMVdSWQRvLpGW',
-                            },
-                          },
-                          {
-                            owner: {
-                              AddressOwner:
-                                '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
-                            },
-                            reference: {
-                              objectId:
-                                '0x1c95229674cc7d5b98d727654dbb7174a9e57f9dc7dfe137fa9334fd7f41ad6c',
-                              version: 19500109,
-                              digest:
-                                'GLmtFRsPB5K5ucTYmnLZe5KRvrHVPzFRW7kCHTYaZjV9',
-                            },
-                          },
-                        ],
-                        gasObject: {
-                          owner: {
-                            AddressOwner:
-                              '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
-                          },
-                          reference: {
-                            objectId:
-                              '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
-                            version: 19500109,
-                            digest:
-                              '9BW1d8JdCnd9zcvwTTdfmRfsMrgYeTJwMVdSWQRvLpGW',
-                          },
-                        },
-                        dependencies: [
-                          'BFCHe6cgocL6fgZ3MGEcL4GacDaLXfHEbVcPwZAcUxxd',
-                          'GXXgBahrtcjn8yBXwJhtyvZcmXZCkX6UPgi6JqhnNd2k',
-                          'Hcdeuz2dkywh5Ud7SskTN3154AF7hgjUhkpivsDdoXkw',
-                        ],
-                      },
-                      confirmedLocalExecution: true,
-                    }),
+                    // it receives the response here, but for some reasons e is CustomEvent object
+                    // must be SuiTransactionResponseObject
+                    e => {
+                      if (typeof e === CustomEvent) {
+                        window.ReactNativeWebView.postMessage('CstomEventooo');
+                        window.ReactNativeWebView.postMessage(
+                          Object.prototype.toString.call(e.detail) ===
+                            '[object Object]'
+                            ? JSON.stringify(e.detail)
+                            : e.detail,
+                        );
+                        window.ReactNativeWebView.postMessage(e.type);
+                      }
+                      return e.result;
+                    },
+                    //   {
+                    //   digest: '7nQc6tA2SVsGTvM9w5BoNggiTijW1t6qrEfk18JrFgMj',
+                    //   effects: {
+                    //     messageVersion: 'v1',
+                    //     status: {
+                    //       status: 'success',
+                    //     },
+                    //     executedEpoch: '140',
+                    //     gasUsed: {
+                    //       computationCost: '752000',
+                    //       storageCost: '3526400',
+                    //       storageRebate: '3453516',
+                    //       nonRefundableStorageFee: '34884',
+                    //     },
+                    //     modifiedAtVersions: [
+                    //       {
+                    //         objectId:
+                    //           '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
+                    //         sequenceNumber: '19500108',
+                    //       },
+                    //       {
+                    //         objectId:
+                    //           '0x1c95229674cc7d5b98d727654dbb7174a9e57f9dc7dfe137fa9334fd7f41ad6c',
+                    //         sequenceNumber: '19500108',
+                    //       },
+                    //     ],
+                    //     sharedObjects: [
+                    //       {
+                    //         objectId:
+                    //           '0x0000000000000000000000000000000000000000000000000000000000000006',
+                    //         version: 11707511,
+                    //         digest:
+                    //           '3utYxzSRVNtt1FjgvGU4Dzfyitrv1YK5t84cB46KpMJ9',
+                    //       },
+                    //     ],
+                    //     transactionDigest:
+                    //       '7nQc6tA2SVsGTvM9w5BoNggiTijW1t6qrEfk18JrFgMj',
+                    //     mutated: [
+                    //       {
+                    //         owner: {
+                    //           AddressOwner:
+                    //             '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
+                    //         },
+                    //         reference: {
+                    //           objectId:
+                    //             '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
+                    //           version: 19500109,
+                    //           digest:
+                    //             '9BW1d8JdCnd9zcvwTTdfmRfsMrgYeTJwMVdSWQRvLpGW',
+                    //         },
+                    //       },
+                    //       {
+                    //         owner: {
+                    //           AddressOwner:
+                    //             '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
+                    //         },
+                    //         reference: {
+                    //           objectId:
+                    //             '0x1c95229674cc7d5b98d727654dbb7174a9e57f9dc7dfe137fa9334fd7f41ad6c',
+                    //           version: 19500109,
+                    //           digest:
+                    //             'GLmtFRsPB5K5ucTYmnLZe5KRvrHVPzFRW7kCHTYaZjV9',
+                    //         },
+                    //       },
+                    //     ],
+                    //     gasObject: {
+                    //       owner: {
+                    //         AddressOwner:
+                    //           '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
+                    //       },
+                    //       reference: {
+                    //         objectId:
+                    //           '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
+                    //         version: 19500109,
+                    //         digest:
+                    //           '9BW1d8JdCnd9zcvwTTdfmRfsMrgYeTJwMVdSWQRvLpGW',
+                    //       },
+                    //     },
+                    //     dependencies: [
+                    //       'BFCHe6cgocL6fgZ3MGEcL4GacDaLXfHEbVcPwZAcUxxd',
+                    //       'GXXgBahrtcjn8yBXwJhtyvZcmXZCkX6UPgi6JqhnNd2k',
+                    //       'Hcdeuz2dkywh5Ud7SskTN3154AF7hgjUhkpivsDdoXkw',
+                    //     ],
+                    //   },
+                    //   confirmedLocalExecution: true,
+                    // }
                     'execute-transaction-request',
                   );
                 }),
