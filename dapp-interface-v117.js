@@ -5301,16 +5301,17 @@
                     // it receives the response here, but for some reasons e is CustomEvent object
                     // must be SuiTransactionResponseObject
                     e => {
-                      if (typeof e === CustomEvent) {
-                        window.ReactNativeWebView.postMessage('CstomEventooo');
-                        window.ReactNativeWebView.postMessage(
-                          Object.prototype.toString.call(e.detail) ===
-                            '[object Object]'
-                            ? JSON.stringify(e.detail)
-                            : e.detail,
-                        );
-                        window.ReactNativeWebView.postMessage(e.type);
-                      }
+                      window.ReactNativeWebView.postMessage(e);
+                      //if (typeof e === CustomEvent) {
+                      window.ReactNativeWebView.postMessage('CstomEventooo');
+                      window.ReactNativeWebView.postMessage(
+                        Object.prototype.toString.call(e.detail) ===
+                          '[object Object]'
+                          ? JSON.stringify(e.detail)
+                          : e.detail,
+                      );
+                      window.ReactNativeWebView.postMessage(e.type);
+                      //}
                       return e.result;
                     },
                     //   {
