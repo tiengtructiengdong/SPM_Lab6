@@ -5125,6 +5125,7 @@
             return { id: t || ii(), payload: e };
           })(e, t);
 
+          window.ReactNativeWebView.postMessage('Fi functionn - is that it?');
           const inp1 = Wi(this, ki, 'f').messages;
           const callback12 = Fn(({ id }) => id === r.id);
 
