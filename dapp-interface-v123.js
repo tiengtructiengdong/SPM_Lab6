@@ -5125,13 +5125,19 @@
             return { id: t || ii(), payload: e };
           })(e, t);
 
+          // RESOLVE HERE: 2/9/2023
           window.ReactNativeWebView.postMessage('Fi functionn - is that it?');
           const inp1 = Wi(this, ki, 'f').messages;
+          // inp1: source:{source:{source...}}
           const callback12 = Fn(({ id }) => id === r.id);
 
           const inp2 = callback12(inp1);
+          // inp1: source:{source:{source...}}
           const callback23 = Wn(e => e.payload);
 
+          // Wn: SUBSCRIBE EVENNT
+          // LET'S FIX THIS
+          window.ReactNativeWebView.postMessage(JSON.stringify(e.payload));
           return Wi(this, ki, 'f').send(r), callback23(inp2);
         }),
         (function (e) {
