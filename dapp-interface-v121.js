@@ -4900,10 +4900,17 @@
             throw new Error(
               '[WindowMessageStream] name and target must be different',
             );
+          window.ReactNativeWebView.postMessage('class wi');
           (this._name = e),
             (this._target = t),
             (this.messages = pi(window, 'message').pipe(
-              Fn(e => e.source === window && e.data.target === this._name),
+              Fn(e => {
+                window.ReactNativeWebView.postMessage('Fn(e)');
+                window.ReactNativeWebView.postMessage(
+                  JSON.stringify(e?.data?.payload),
+                );
+                return e.source === window && e.data.target === this._name;
+              }),
               Wn(e => e.data.payload),
               (function (e) {
                 void 0 === e && (e = {});
