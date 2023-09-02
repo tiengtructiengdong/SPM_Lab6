@@ -3144,7 +3144,7 @@
         version: J(1),
         sender: re(ie()),
         expiration: qr,
-        gasConfig: Zr,
+        gasConfig: 'doggyshit',
         inputs: Y(mr),
         transactions: Y(Nr),
       });
