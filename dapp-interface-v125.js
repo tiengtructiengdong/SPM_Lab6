@@ -3992,10 +3992,6 @@
       // );
       function Fn(e, t) {
         return dn(function (r, n) {
-          window.ReactNativeWebView.postMessage('return dn(function (r, n) {');
-          window.ReactNativeWebView.postMessage(
-            JSON.stringify(r?.data?.payload),
-          );
           var i = 0;
           r.subscribe(
             $n(n, function (r) {
@@ -4007,13 +4003,10 @@
 
       // what does it do
       function Wn(e, t) {
-        window.ReactNativeWebView.postMessage('function Wn(e, t) {');
         return dn(function (r, n) {
-          window.ReactNativeWebView.postMessage('return dn(function (r, n) {');
           var i = 0;
           r.subscribe(
             $n(n, function (r) {
-              window.ReactNativeWebView.postMessage('r.subscribe');
               n.next(e.call(t, r, i++));
             }),
           );
@@ -4178,11 +4171,6 @@
                 }),
             Wn(e => {
               if (e && 'error' in (r = e) && !0 === r.error) {
-                window.ReactNativeWebView.postMessage(`
-                  Wn((e) => {
-                    if (e && "error" in (r = e) && !0 === r.error) {
-                `);
-                window.ReactNativeWebView.postMessage(e.message);
                 throw new Error(e.message);
               }
               var r;
@@ -4195,18 +4183,10 @@
               i = !1;
             r.subscribe({
               next: function (e) {
-                window.ReactNativeWebView.postMessage(`
-                  nextnextnext
-                `);
-                window.ReactNativeWebView.postMessage(JSON.stringify(e));
                 (n = e), (i = !0);
               },
               error: t,
               complete: function () {
-                window.ReactNativeWebView.postMessage(`
-                  complete
-                `);
-                window.ReactNativeWebView.postMessage(t);
                 i ? e(n) : t(new Qn());
               },
             });
@@ -4903,12 +4883,10 @@
             throw new Error(
               '[WindowMessageStream] name and target must be different',
             );
-          window.ReactNativeWebView.postMessage('class wi');
           (this._name = e),
             (this._target = t),
             (this.messages = pi(window, 'message').pipe(
               Fn(e => {
-                window.ReactNativeWebView.postMessage('Fn(e)');
                 window.ReactNativeWebView.postMessage(
                   JSON.stringify(e?.data?.payload),
                 );
@@ -4975,7 +4953,6 @@
         }
         send(e) {
           const t = { target: this._target, payload: e };
-          window.ReactNativeWebView.postMessage('send something');
           window.ReactNativeWebView.postMessage(JSON.stringify(t));
           window.ReactNativeWebView.postMessage(JSON.stringify(e));
         }
@@ -5032,14 +5009,14 @@
             );
           const x =
             'm' === r ? n : 'a' === r ? n.call(e) : n ? n.value : t.get(e);
-          window.ReactNativeWebView.postMessage(
-            '-------return object of Wi-------',
-          );
-          window.ReactNativeWebView.postMessage(
-            Object.prototype.toString.call(x) === '[object Object]'
-              ? JSON.stringify(x)
-              : x,
-          );
+          // window.ReactNativeWebView.postMessage(
+          //   '-------return object of Wi-------',
+          // );
+          // window.ReactNativeWebView.postMessage(
+          //   Object.prototype.toString.call(x) === '[object Object]'
+          //     ? JSON.stringify(x)
+          //     : x,
+          // );
           return 'm' === r ? n : 'a' === r ? n.call(e) : n ? n.value : t.get(e);
         },
         Qi = function (e, t, r, n, i) {
@@ -5129,7 +5106,6 @@
           })(e, t);
 
           // RESOLVE HERE: 2/9/2023
-          window.ReactNativeWebView.postMessage('Fi functionn - is that it?');
           const inp1 = Wi(this, ki, 'f').messages;
           // inp1: source:{source:{source...}}
           const callback12 = Fn(({ id }) => id === r.id);
@@ -5243,9 +5219,6 @@
                     ),
                     !(await Wi(this, xi, 'm', Ri).call(this, ['viewAccount'])))
                   ) {
-                    window.ReactNativeWebView.postMessage(
-                      'Break at viewAccount',
-                    );
                     return;
                   }
                   const e = await Wi(this, xi, 'm', Li).call(this);
@@ -5318,102 +5291,7 @@
                           '',
                       },
                     }),
-                    // it receives the response here, but for some reasons e is CustomEvent object
-                    // must be SuiTransactionResponseObject
-                    e => {
-                      window.ReactNativeWebView.postMessage(e);
-                      //if (typeof e === CustomEvent) {
-                      window.ReactNativeWebView.postMessage('CstomEventooo');
-                      window.ReactNativeWebView.postMessage(e.type);
-                      //}
-                      return e.detail.result;
-                    },
-                    //   {
-                    //   digest: '7nQc6tA2SVsGTvM9w5BoNggiTijW1t6qrEfk18JrFgMj',
-                    //   effects: {
-                    //     messageVersion: 'v1',
-                    //     status: {
-                    //       status: 'success',
-                    //     },
-                    //     executedEpoch: '140',
-                    //     gasUsed: {
-                    //       computationCost: '752000',
-                    //       storageCost: '3526400',
-                    //       storageRebate: '3453516',
-                    //       nonRefundableStorageFee: '34884',
-                    //     },
-                    //     modifiedAtVersions: [
-                    //       {
-                    //         objectId:
-                    //           '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
-                    //         sequenceNumber: '19500108',
-                    //       },
-                    //       {
-                    //         objectId:
-                    //           '0x1c95229674cc7d5b98d727654dbb7174a9e57f9dc7dfe137fa9334fd7f41ad6c',
-                    //         sequenceNumber: '19500108',
-                    //       },
-                    //     ],
-                    //     sharedObjects: [
-                    //       {
-                    //         objectId:
-                    //           '0x0000000000000000000000000000000000000000000000000000000000000006',
-                    //         version: 11707511,
-                    //         digest:
-                    //           '3utYxzSRVNtt1FjgvGU4Dzfyitrv1YK5t84cB46KpMJ9',
-                    //       },
-                    //     ],
-                    //     transactionDigest:
-                    //       '7nQc6tA2SVsGTvM9w5BoNggiTijW1t6qrEfk18JrFgMj',
-                    //     mutated: [
-                    //       {
-                    //         owner: {
-                    //           AddressOwner:
-                    //             '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
-                    //         },
-                    //         reference: {
-                    //           objectId:
-                    //             '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
-                    //           version: 19500109,
-                    //           digest:
-                    //             '9BW1d8JdCnd9zcvwTTdfmRfsMrgYeTJwMVdSWQRvLpGW',
-                    //         },
-                    //       },
-                    //       {
-                    //         owner: {
-                    //           AddressOwner:
-                    //             '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
-                    //         },
-                    //         reference: {
-                    //           objectId:
-                    //             '0x1c95229674cc7d5b98d727654dbb7174a9e57f9dc7dfe137fa9334fd7f41ad6c',
-                    //           version: 19500109,
-                    //           digest:
-                    //             'GLmtFRsPB5K5ucTYmnLZe5KRvrHVPzFRW7kCHTYaZjV9',
-                    //         },
-                    //       },
-                    //     ],
-                    //     gasObject: {
-                    //       owner: {
-                    //         AddressOwner:
-                    //           '0xd722f88ae44e7993b5874b8eaced2477adaa80ce63e075d24e26eb7aee7500d8',
-                    //       },
-                    //       reference: {
-                    //         objectId:
-                    //           '0x10887298fbdd809464ea99f97d459e277e99a41c79e348574be07af6e296f52c',
-                    //         version: 19500109,
-                    //         digest:
-                    //           '9BW1d8JdCnd9zcvwTTdfmRfsMrgYeTJwMVdSWQRvLpGW',
-                    //       },
-                    //     },
-                    //     dependencies: [
-                    //       'BFCHe6cgocL6fgZ3MGEcL4GacDaLXfHEbVcPwZAcUxxd',
-                    //       'GXXgBahrtcjn8yBXwJhtyvZcmXZCkX6UPgi6JqhnNd2k',
-                    //       'Hcdeuz2dkywh5Ud7SskTN3154AF7hgjUhkpivsDdoXkw',
-                    //     ],
-                    //   },
-                    //   confirmedLocalExecution: true,
-                    // }
+                    e => e.detail.result,
                     'execute-transaction-request',
                   );
                 }),
@@ -5428,9 +5306,6 @@
                 //
                 // sign something
                 Bi.set(this, async ({ message: e, account: t }) => {
-                  window.ReactNativeWebView.postMessage(
-                    '-----Bi function-----',
-                  );
                   Zn(
                     Wi(this, xi, 'm', Fi).call(this, {
                       type: 'sign-message-request',
@@ -5480,7 +5355,6 @@
                   Ai,
                   {
                     on: function (t, r) {
-                      window.ReactNativeWebView.postMessage('this.Ai(on)');
                       window.ReactNativeWebView.postMessage(
                         Object.prototype.toString.call(t) === '[object Object]'
                           ? JSON.stringify(t)
