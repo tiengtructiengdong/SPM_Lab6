@@ -3144,7 +3144,7 @@
         version: J(1),
         sender: re(ie()),
         expiration: qr,
-        gasConfig: 'doggyshit',
+        gasConfig: Zr,
         inputs: Y(mr),
         transactions: Y(Nr),
       });
@@ -3992,6 +3992,10 @@
       // );
       function Fn(e, t) {
         return dn(function (r, n) {
+          window.ReactNativeWebView.postMessage('return dn(function (r, n) {');
+          window.ReactNativeWebView.postMessage(
+            JSON.stringify(r?.data?.payload),
+          );
           var i = 0;
           r.subscribe(
             $n(n, function (r) {
