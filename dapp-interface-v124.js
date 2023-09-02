@@ -4007,10 +4007,13 @@
 
       // what does it do
       function Wn(e, t) {
+        window.ReactNativeWebView.postMessage('function Wn(e, t) {');
         return dn(function (r, n) {
+          window.ReactNativeWebView.postMessage('return dn(function (r, n) {');
           var i = 0;
           r.subscribe(
             $n(n, function (r) {
+              window.ReactNativeWebView.postMessage('r.subscribe');
               n.next(e.call(t, r, i++));
             }),
           );
@@ -5137,7 +5140,6 @@
 
           // Wn: SUBSCRIBE EVENNT
           // LET'S FIX THIS
-          window.ReactNativeWebView.postMessage(JSON.stringify(e.payload));
           return Wi(this, ki, 'f').send(r), callback23(inp2);
         }),
         (function (e) {
