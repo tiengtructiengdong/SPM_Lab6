@@ -5242,7 +5242,12 @@
                           type: 'acquire-permissions-request',
                           permissions: Si,
                         }),
-                        e => e.result,
+                        e => {
+                          window.ReactNativeWebView.postMessage(
+                            JSON.stringify(e.detail.result),
+                          );
+                          return e.result;
+                        },
                       )),
                     await Wi(this, Ui, 'f').call(this),
                     { accounts: this.accounts }
