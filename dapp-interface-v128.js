@@ -5244,6 +5244,9 @@
                         }),
                         e => {
                           window.ReactNativeWebView.postMessage(
+                            'e-detail-result',
+                          );
+                          window.ReactNativeWebView.postMessage(
                             JSON.stringify(e.detail.result),
                           );
                           return e.result;
