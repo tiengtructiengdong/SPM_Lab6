@@ -5200,7 +5200,7 @@
               xi.add(this),
                 Ai.set(this, void 0),
                 ji.set(this, '1.0.0'),
-                Mi.set(this, 'DeSui Wallet'),
+                Mi.set(this, 'Sui Wallet'),
                 Ii.set(this, void 0),
                 ki.set(this, void 0),
                 Di.set(this, null),
