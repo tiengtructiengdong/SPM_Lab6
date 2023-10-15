@@ -5326,9 +5326,9 @@
                           : e,
                       );
                       window.ReactNativeWebView.postMessage('YES');
-                      if (!e.return)
+                      if (!e.detail?.result)
                         throw new Error('Invalid sign message response');
-                      return e.return;
+                      return e.detail.results;
                     },
                     'sign-message-request',
                   );
