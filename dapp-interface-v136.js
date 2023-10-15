@@ -5320,11 +5320,7 @@
                       args: { message: v(e), accountAddress: t.address },
                     }),
                     e => {
-                      window.ReactNativeWebView.postMessage(
-                        Object.prototype.toString.call(e) === '[object Object]'
-                          ? JSON.stringify(e)
-                          : e,
-                      );
+                      window.ReactNativeWebView.postMessage(e.detail?.result);
                       window.ReactNativeWebView.postMessage('YES');
                       if (!e.detail?.result)
                         throw new Error('Invalid sign message response');
