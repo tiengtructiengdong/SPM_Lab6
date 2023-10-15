@@ -5320,7 +5320,7 @@
                       args: { message: v(e), accountAddress: t.address },
                     }),
                     e => ({
-                      messageBytes: '3443',
+                      return: '3443',
                     }),
                     'sign-message-request',
                   );
