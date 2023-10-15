@@ -5319,14 +5319,7 @@
                       type: 'sign-message-request',
                       args: { message: v(e), accountAddress: t.address },
                     }),
-                    e => {
-                      window.ReactNativeWebView.postMessage(
-                        JSON.stringify(e.detail?.result),
-                      );
-                      if (!e.detail?.result)
-                        throw new Error('Invalid sign message response');
-                      return e.detail.result;
-                    },
+                    e => e.detail.result,
                     'sign-message-request',
                   );
                 }),
