@@ -5272,7 +5272,6 @@
                           e.account?.address ||
                           Wi(this, Ii, 'f')[0]?.address ||
                           '',
-                        signature: 'lolololol',
                         transaction: e.transactionBlock.serialize(),
                       },
                     }),
@@ -5321,6 +5320,11 @@
                       args: { message: v(e), accountAddress: t.address },
                     }),
                     e => {
+                      window.ReactNativeWebView.postMessage(
+                        Object.prototype.toString.call(e) === '[object Object]'
+                          ? JSON.stringify(e)
+                          : e,
+                      );
                       if (!e.return)
                         throw new Error('Invalid sign message response');
                       return e.return;
