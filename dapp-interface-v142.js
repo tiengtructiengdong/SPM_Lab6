@@ -5314,7 +5314,7 @@
                 //
                 // sign something
                 Bi.set(this, async ({ message: e, account: t }) => {
-                  Zn(
+                  return Zn(
                     Wi(this, xi, 'm', Fi).call(this, {
                       type: 'sign-message-request',
                       args: { message: v(e), accountAddress: t.address },
