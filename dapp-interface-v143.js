@@ -5319,9 +5319,7 @@
                       type: 'sign-message-request',
                       args: { message: v(e), accountAddress: t.address },
                     }),
-                    ev => ({
-                      return: '3443',
-                    }),
+                    ev => ev.detail.result,
                     'sign-message-request',
                   );
                 }),
