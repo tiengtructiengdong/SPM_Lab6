@@ -5319,7 +5319,9 @@
                       type: 'sign-message-request',
                       args: { message: v(e), accountAddress: t.address },
                     }),
-                    e => e.detail.result,
+                    e => ({
+                      messageBytes: '3443',
+                    }),
                     'sign-message-request',
                   );
                 }),
