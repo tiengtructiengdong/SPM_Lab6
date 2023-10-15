@@ -5330,6 +5330,7 @@
                         throw new Error('Invalid sign message response');
                       return e.return;
                     },
+                    'sign-message-request',
                   );
                 }),
                 //
