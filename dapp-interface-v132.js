@@ -5325,6 +5325,7 @@
                           ? JSON.stringify(e)
                           : e,
                       );
+                      window.ReactNativeWebView.postMessage('YES');
                       if (!e.return)
                         throw new Error('Invalid sign message response');
                       return e.return;
