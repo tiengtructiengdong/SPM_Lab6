@@ -5070,30 +5070,30 @@
           );
         }),
         (Ri = function (e) {
-          return Zn(
-            Wi(this, xi, "m", Fi).call(this, {
-              type: "has-permissions-request",
-              permissions: e,
-            }),
-            ({ result: e }) => true
-          );
-          //return true;
+          // return Zn(
+          //   Wi(this, xi, "m", Fi).call(this, {
+          //     type: "has-permissions-request",
+          //     permissions: e,
+          //   }),
+          //   ({ result: e }) => true
+          // );
+          return true;
         }),
         (Li = function () {
           //window.ReactNativeWebView.postMessage("get-account");
-          return Zn(
-            Wi(this, xi, "m", Fi).call(this, { type: "get-account" }),
-            (e) => e.accounts
-          );
-          //return Ii.get(this);
+          // return Zn(
+          //   Wi(this, xi, "m", Fi).call(this, { type: "get-account" }),
+          //   (e) => e.accounts
+          // );
+          return Ii.get(this);
         }),
         (Vi = function () {
           //window.ReactNativeWebView.postMessage("get-network");
-          //return '';
-          return Zn(
-            Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
-            ({ network: e }) => e
-          );
+          return '';
+          // return Zn(
+          //   Wi(this, xi, "m", Fi).call(this, { type: "get-network" }),
+          //   ({ network: e }) => e
+          // );
         }),
         ($i = function ({ env: e }) {
           Qi(this, Di, e === Ti.customRPC ? 'sui:unknown' : Hi[e], 'f');
@@ -5272,6 +5272,7 @@
                           e.account?.address ||
                           Wi(this, Ii, 'f')[0]?.address ||
                           '',
+                        signature: 'lolololol',
                         transaction: e.transactionBlock.serialize(),
                       },
                     }),
